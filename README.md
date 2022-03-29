@@ -4,12 +4,12 @@
 
 Trackgenix is a time tracker and project management application. 
 
-This web app have 4 different type of users with different functionalities: SuperAdmin, Admin, Project Manager and Employee.
- 
+This web app has 4 different type of users with different functionalities: SuperAdmin, Admin, Project Manager and Employee.
+
 
 ### Reports
 
-Admin is allowed to create reports about all the projects and employees. Projects Managers can visualize them.
+Admin can create reports on all projects and employees. Project managers can view them.
 
 ![image](https://user-images.githubusercontent.com/94427392/160259600-75f93190-5ded-474e-9e78-eb957a0e7518.png)
 
@@ -17,9 +17,9 @@ Admin is allowed to create reports about all the projects and employees. Project
 
 ### Time tracking
 
-An employee can see the projects in which he participate and upload his worked hours.
+An employee can view the projects in which he participatea and upload his hours worked.
 
-Project Managers can also see this timesheet and validate uploaded hours.
+Project managers can also view this timesheet and validate the uploaded hours.
 
 ![image](https://user-images.githubusercontent.com/94427392/160260367-a2f4d483-c3f3-4699-b6cb-4821c6e2f328.png)
 
