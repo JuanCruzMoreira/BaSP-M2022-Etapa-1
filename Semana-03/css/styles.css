@@ -1,0 +1,120 @@
+header, main, footer, nav, section {
+  border: 0px solid blue;
+}
+
+body {
+  font-family: 'Roboto';
+}
+
+header {
+  position: relative;
+  left: 288px;
+  height: 100px;
+  width: 1152px;
+  border-bottom: 5px solid #FF5500;
+}
+
+h1 {
+  position: absolute;
+  top: 23px;
+  left: 100px;
+  font-family: 'Poppins' monospace;
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+#menu-icon {
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  height: 30px;
+  width: 30px;
+  color: #FF5500;
+}
+
+.social-networks-icons {
+  position: absolute;
+  width: 200px;
+  padding: 5px 10px;
+  right: 20px;
+  bottom: 20px;
+}
+
+.social-networks-icons i {
+  color: black;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 288px;
+  height: 100%;
+  background-color: #DDDDDD;
+}
+
+main {
+  position: absolute;
+  left: 288px;
+  width: 1152px;
+}
+
+#about-us{
+  height: 500px;
+  
+}
+
+#about-us img {
+  width: 525px;
+  height: 401px;
+}
+
+#functionalities {
+  height: 461px;
+}
+
+#why-trackgenix  {
+  height: 368px;
+}
+
+#why-trackgenix img {
+  width: 280px;
+  height: 267.56px;
+}
+
+#contact {
+  height: 512px;
+}
+
+#our-story {
+  height: 380px;
+}
+
+#our-story img {
+  width: 435.61px;
+  height: 219.38px;
+}
+
+footer {
+  position: absolute;
+  width: 1152px;
+  height: 416px;
+  top: 2321px;
+  left: 288px;
+}
+
+#extra-links {
+  margin: auto;
+}
+
+#extra-links div {
+  float: left;
+}
+
+#social-networks-footer {
+  position: absolute;
+  top: 2627px;
+}
