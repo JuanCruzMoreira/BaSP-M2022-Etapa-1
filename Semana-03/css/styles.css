@@ -1,13 +1,5 @@
-/* * {
-  outline: 1px solid red;
-} */
-
-/* section {
-  outline: 1px solid yellow;
-} */
-
 body {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -15,7 +7,8 @@ h1 {
   position: absolute;
   top: 23px;
   left: 100px;
-  font-family: 'Poppins' monospace;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   font-size: 36px;
 }
 
@@ -57,6 +50,10 @@ a {
 section{
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+section:not(:last-child) {
+  border-bottom: 1px solid #AAAAAA;
 }
 
 header {
@@ -133,6 +130,10 @@ nav {
   left: 16px
 }
 
+.nav-menu h2 {
+  font-weight: 700;
+}
+
 .nav-menu li{
   list-style: none;
   margin-top: 20px;
@@ -166,6 +167,7 @@ main {
 
 .about-us-content p {
   font-size: 20px;
+  color: #373867;
 }
 
 .about-us-img {
@@ -181,7 +183,7 @@ main {
 }
 
 #functionalities h2 {
-  margin: 0px 0px 1px 15px;
+  margin-bottom: 1px;
 }
 
 /* Disponer las features de 2 en 2 */
@@ -232,6 +234,7 @@ main {
 
 .why-trackgenix-content h2 {
   margin-bottom: 20px;
+  margin-left: -25px;
 }
 .why-trackgenix-content button {
   width: 131px;
@@ -256,29 +259,32 @@ main {
   margin-bottom: 40px;
 }
 
+#contact input, select, textarea {
+  border: 1px solid #AAAAAA;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
 .text-input{
-  width: 523px;
+  width: 522.58px;
   height: 37px;
-  outline: 1px solid red;
 }
 
 /* Ver que pasa con el margen, deberia ser 34px */
 .text-input:nth-child(2) {
-  margin-left: 29px;
+  margin-left: 30px;
 }
 
 select {
   width: 100%;
   height: 37px;
   margin: 40px 0px;
-  outline: 1px solid blue;
 }
 
 textarea {
   width: 100%;
   height: 97px;
   margin-bottom: 40px;
-  outline: 1px solid green;
 }
 
 .submit-button {
@@ -298,7 +304,6 @@ textarea {
 }
 
 #our-story h2 {
-  margin-top: 50px;
   margin-bottom: 30px;
 }
 .our-story-img {
@@ -326,8 +331,13 @@ textarea {
   display: inline-block;
   left: 189px;
   width: 22%;
-  margin-top: 97.333px;
   margin-right: 100px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.our-services-item h2 {
+  position: relative;
+  left: -21px;
 }
 
 .our-services-item:last-child {
@@ -340,19 +350,21 @@ footer {
   height: 100px;
   top: 2637px;
   left: 288px;
-  font-family: Poppins;
+  border-top: 5px solid #FF5500;
+  font-family: 'Poppins', sans-serif;
 }
 
 #social-networks-footer {
   float: none;
   position: relative;
-  margin: auto;
+  margin: 25px 473px 0px;
 }
 
 .copy{
   position: relative;
-  width: 416px;
-  margin:0px 358px;
-  text-align: center;
+  width: 450px;
+  margin: 14px 358px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
