@@ -28,3 +28,10 @@ Project managers can also view this timesheet and validate the uploaded hours.
 ![image](https://user-images.githubusercontent.com/94427392/160260373-ef8b0520-5d0f-4c44-9641-8e83e86d264b.png)
 
 
+## Week 02
+
+We build the structure of the landing page using HTML, prioritizing the use of semantic tags
+
+## Week 03
+
+Based on the work of week 02 we styled the landing page using basic CSS properties
