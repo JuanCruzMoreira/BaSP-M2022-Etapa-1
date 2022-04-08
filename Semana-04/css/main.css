@@ -1,0 +1,28 @@
+/* MOBILE */
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 32px;
+}
+
+section:not(:last-child) {
+  border-bottom: 1px solid #AAAAAA;
+}
+
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us-content h2 {
+  margin: 20px 0px
+}
+
+.about-us-img {
+  width: 337.89px;
+  height: 270px;
+  border-radius: 5px;
+}
+
