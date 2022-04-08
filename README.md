@@ -35,3 +35,8 @@ We build the structure of the landing page using HTML, prioritizing the use of s
 ## Week 03
 
 Based on the work of week 02 we styled the landing page using basic CSS properties
+
+## Week 04
+
+This week we made a responsive design of the landing page following the Mobile-first concept.
+Unlike the previous week, we can use flexbox layout model.

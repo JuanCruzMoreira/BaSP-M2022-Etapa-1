@@ -1,0 +1,370 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  position: absolute;
+  /* top: 23px;
+  left: 100px; */
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 25px;
+  /* margin-bottom: 5px; */
+}
+
+li {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+p {
+  /* display: inline-block; */
+  font-weight: 400;
+  font-size: 15px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.button {
+  height: 46px;
+  border-radius: 5px;
+  border: 1px solid #FF5500;
+  background: white;
+  color: #FF5500;
+}
+
+/* section{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+section:not(:last-child) {
+  border-bottom: 1px solid #AAAAAA;
+}
+
+header {
+  clear:both;
+  height: 100px;
+  width: 1440px;
+  background: white;
+  border-bottom: 5px solid #FF5500;
+}
+
+#menu-icon {
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  font-size: 30px;
+  color: #FF5500;
+}
+
+.social-networks-icons {
+  float: right;
+  width: 200px;
+  margin-top: 60px;
+  padding: 5px 10px;
+}
+
+.social-networks-icons i {
+  margin-right: 20px;
+  font-size: 20px;
+  color: black;
+}
+
+.social-networks-icons a:last-child i {
+  margin-right: 0px;
+}
+
+nav {
+  float:left;
+  top: 0px;
+  left: 0px;
+  width: 288px;
+  height: 2529px;
+  background-color: #DDDDDD;
+  font-size: 20px;
+}
+
+#search-bar {
+  margin-top: 35px;
+}
+
+#search-bar input{
+  float: left;
+  width: 207px;
+  height: 37px;
+  margin-left: 14px;
+  padding: 10px 0px 11px 12px;
+  border-radius: 4px 0px 0px 4px;
+  background-color: #FFFFFF;
+}
+
+#search-bar button {
+  float: left;
+  width: 53px;
+  height: 37px;
+  margin-right: 14px;
+  padding: 12px 19px 10px;
+  border-radius: 0px 4px 4px 0px;
+  background: #FFFFFF;
+  font-size: 15px;
+}
+
+.nav-menu {
+  position: relative;
+  top: 116px;
+  left: 16px
+}
+
+.nav-menu h2 {
+  font-weight: 700;
+}
+
+.nav-menu li{
+  list-style: none;
+  margin-top: 20px;
+}
+ 
+main {
+  position: absolute;
+  width: 1080px;
+  height: 2172px;
+  top: 149px;
+  left: 318px;
+}
+
+#about-us{
+  height: 401px;
+  width: 1080px;
+  padding-top: 0px;
+}
+
+.about-us-content {
+  display: inline-block;
+  width: 420px;
+  margin: 84px 42px 171px 0px;
+  word-wrap: break-word;
+}
+
+.about-us-content h2 {
+  margin-bottom: 35px;
+  font-weight: 700;
+}
+
+.about-us-content p {
+  font-size: 20px;
+  color: #373867;
+}
+
+.about-us-img {
+  position: absolute;
+  width: 525px;
+  height: 401px;
+}
+
+#functionalities {
+  position: relative;
+  height: 361px;
+  /* visibility: hidden;
+}
+
+#functionalities h2 {
+  margin-bottom: 1px;
+}
+
+/* Disponer las features de 2 en 2
+.functionalities-item {
+  position: relative;
+  display: inline-block;
+  width: 49%;
+  margin-top: 35px;
+  word-wrap: break-word;
+}
+
+.functionalities-item-content {
+  display: inline-block;
+  width: 350px;
+  height: 130px;
+  margin-left: 10px;
+}
+
+.functionalities-item p{
+  font-weight: 300;
+}
+
+.functionalities-item i {
+  position: relative;
+  top: 0px;
+  font-size: 130px;
+  outline: 5px solid black;
+}
+
+/* Es se saca cuando ponga un item el tamaño correcto
+.functionalities-item:nth-child(4) i, .functionalities-item:last-child i {
+  padding: 0px 16.61px;
+}
+
+#why-trackgenix  {
+  position: relative;
+  padding-top: 52px;
+  height: 266px;
+  width: 1080px;
+}
+
+.why-trackgenix-content {
+  float: left;
+  height: 266px;
+  margin-left: 130px;
+  font-size: 20px;
+}
+
+.why-trackgenix-content h2 {
+  margin-bottom: 20px;
+  margin-left: -25px;
+}
+.why-trackgenix-content button {
+  width: 131px;
+  margin: 50px 0px;
+  font-size: 15px;
+}
+
+.why-trackgenix-img {
+  float: right;
+  width: 280px;
+  height: 267.56px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+}
+
+#contact {
+  height: 412px;
+  width: 1080px;
+}
+
+#contact h2 {
+  margin-bottom: 40px;
+}
+
+#contact input, select, textarea {
+  border: 1px solid #AAAAAA;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.text-input{
+  width: 522.58px;
+  height: 37px;
+}
+
+/* Ver que pasa con el margen, deberia ser 34px 
+.text-input:nth-child(2) {
+  margin-left: 30px;
+}
+
+select {
+  width: 100%;
+  height: 37px;
+  margin: 40px 0px;
+}
+
+textarea {
+  width: 100%;
+  height: 97px;
+  margin-bottom: 40px;
+}
+
+.submit-button {
+  width: 171px;
+  margin-right: 45px;
+  background-color: #FF5500;
+  color: white;
+}
+
+.reset-button {
+  width: 111px;
+}
+
+#our-story {
+  height: 280px;
+  width: 1080px;
+}
+
+#our-story h2 {
+  margin-bottom: 30px;
+}
+.our-story-img {
+  width: 435.61px;
+  height: 219.38px;
+}
+
+.our-story-content {
+  float: right;
+  width: 610px;
+  word-wrap: break-word;
+}
+
+#our-services {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 113px;
+  width: 1080px;
+  height: 153px;
+}
+
+/* ¿ Esta bien que los numeros de los li queden "afuera" del div ? 
+.our-services-item {
+  position: relative;
+  display: inline-block;
+  left: 189px;
+  width: 22%;
+  margin-right: 100px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.our-services-item h2 {
+  position: relative;
+  left: -21px;
+}
+
+.our-services-item:last-child {
+  margin-right: 0px;
+}
+
+footer {
+  clear:both;
+  width: 1440px;
+  height: 100px;
+  top: 2637px;
+  left: 288px;
+  border-top: 5px solid #FF5500;
+  font-family: 'Poppins', sans-serif;
+}
+
+#social-networks-footer {
+  float: none;
+  position: relative;
+  margin: 25px 473px 0px;
+}
+
+.copy{
+  position: relative;
+  width: 450px;
+  margin: 14px 358px;
+  font-size: 18px;
+  font-weight: 500;
+} */
+
