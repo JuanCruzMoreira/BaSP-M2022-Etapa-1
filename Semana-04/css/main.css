@@ -41,13 +41,18 @@ section:not(:last-child) {
 #functionalities {
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 35px;
+}
+
+#functionalities h2 {
+  margin-bottom: -10px;
 }
 
 .functionalities-item {
   flex-basis: 400px;
   flex-grow: 1;
   max-width: 490px;
-  margin-bottom: 35px;
 }
 
 /* .functionalities-item:not(:last-child) {
@@ -133,6 +138,7 @@ section:not(:last-child) {
 }
 
 @media (min-width: 768px) {
+
   #about-us {
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -153,5 +159,28 @@ section:not(:last-child) {
 
   .about-us-content h2 {
     margin-top: 0px;
+  }
+
+  #functionalities {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .functionalities-item {
+    display: flex;
+    align-items: center;
+    flex-basis: 300px;
+  }
+  
+  .functionalities-item i {
+    font-size: 40px;
+    margin-right: 10px;
+
+  } 
+}
+
+@media (min-width:1024px) {
+  .functionalities-item{
+    flex-basis: 462px;
   }
 }
