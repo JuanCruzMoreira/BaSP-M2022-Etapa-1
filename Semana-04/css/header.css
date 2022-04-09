@@ -6,27 +6,30 @@ header {
   justify-content: space-between;
   align-items: center;
 
+  max-width: 1040px;
+  margin: auto;
+  padding: 0px 10px;
   border-bottom: 5px solid red;
 }
 
 #menu-icon {
-  margin-left: 10px;
   font-size: 30px;
 }
 
 /* I need 25px of space between menu and h1 */
 h1 {
- margin-left: -70px;
+  margin-left: -70px;
 }
 
 .social-networks-icons{
   display: flex;
-  align-self: flex-start;
   justify-content: space-between;
+}
 
+header .social-networks-icons {
+  align-self: flex-start;
   width: 115px;
   margin-top: 10px;
-  margin-right: 10px;
 }
 .social-networks-icons i {
   font-size: 15px;

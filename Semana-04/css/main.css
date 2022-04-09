@@ -4,11 +4,16 @@ section {
   display: flex;
   flex-direction: column;
   padding: 30px 32px;
+  max-width: 1040px;
+  margin: auto;
+
 }
 
 section:not(:last-child) {
   border-bottom: 1px solid #AAAAAA;
 }
+
+/* About us */
 
 .about-us-content {
   display: flex;
@@ -17,12 +22,96 @@ section:not(:last-child) {
 }
 
 .about-us-content h2 {
-  margin: 20px 0px
+  margin: 20px 0px;
+  align-self: flex-start;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .about-us-img {
   width: 337.89px;
   height: 270px;
   border-radius: 5px;
+  align-self: center;
 }
 
+/* Functionalities */
+
+.functionalities-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.functionalities-item i {
+  font-size: 40px;
+  margin-left: 8px;
+}
+
+
+
+.functionalities-item-content p {
+  font-size: 10px;
+  line-height: 15px;
+}
+
+/* Why trackgenix */
+
+.why-trackgenix-img {
+  width: 247.12px;
+  height: 230px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.why-trackgenix-content h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.why-trackgenix-content ul {
+  margin: 10px 0px;
+}
+
+.why-trackgenix-content button {
+  width: 117px;
+  height: 37px;
+}
+
+/* Contact */
+
+#contact h2 {
+  margin-bottom: 20px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#contact-form > input, select, textarea {
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+.submit-button{
+  width: 171px;
+}
+.reset-button {
+  width: 111px;
+}
+
+/* Our story */
+
+.our-story-img {
+  margin-bottom: 15px;
+}
+
+/* Our services */
+
+/* Search how to align numbers to title */
+.our-services-item:not(:last-child) {
+  margin-bottom: 15px;
+}

@@ -1,10 +1,11 @@
 * {
   outline: 1px solid red;
+  box-sizing: border-box;
 }
 
 body {
   font-family: sans-serif;
-  width: 414px;
+  
 }
 
 h1 {
@@ -19,12 +20,14 @@ h1 {
 
 h2 {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 20px;
+  line-height: 30px
 }
 
 h3 {
   font-weight: 400;
   font-size: 25px;
+  line-height: 30px;
   /* margin-bottom: 5px; */
 }
 
