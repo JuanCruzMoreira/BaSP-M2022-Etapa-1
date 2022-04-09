@@ -1,12 +1,14 @@
 /* MOBILE */
-
+main{
+  padding: 0px 32px;
+}
 section {
   display: flex;
   flex-direction: column;
-  padding: 30px 32px;
-  max-width: 1040px;
+  padding: 30px 0px;
+  max-width: 1400px;
+  align-items: stretch;
   margin: auto;
-
 }
 
 section:not(:last-child) {
@@ -29,24 +31,34 @@ section:not(:last-child) {
 }
 
 .about-us-img {
-  width: 337.89px;
-  height: 270px;
+  max-width: 100%;
   border-radius: 5px;
   align-self: center;
 }
 
 /* Functionalities */
 
-.functionalities-item:not(:last-child) {
-  margin-bottom: 15px;
+#functionalities {
+  flex-direction: row;
+  flex-wrap: wrap;
 }
+
+.functionalities-item {
+  flex-basis: 400px;
+  flex-grow: 1;
+  max-width: 490px;
+  margin-bottom: 35px;
+}
+
+/* .functionalities-item:not(:last-child) {
+  margin-bottom: 15px;
+} */
 
 .functionalities-item i {
   font-size: 40px;
   margin-left: 8px;
-}
-
-
+  
+} 
 
 .functionalities-item-content p {
   font-size: 10px;
@@ -114,4 +126,32 @@ section:not(:last-child) {
 /* Search how to align numbers to title */
 .our-services-item:not(:last-child) {
   margin-bottom: 15px;
+}
+
+@media (min-width: 480px) {
+
+}
+
+@media (min-width: 768px) {
+  #about-us {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: auto;
+  }
+
+  .about-us-img {
+    width: 352px;
+    flex-basis: 40%;
+    flex-grow: 1;
+  }
+
+  .about-us-content {
+    flex-basis: 40%;
+    flex-grow: 1;
+    margin-right: 47px;
+  }
+
+  .about-us-content h2 {
+    margin-top: 0px;
+  }
 }

@@ -18,12 +18,12 @@ header {
 
 /* I need 25px of space between menu and h1 */
 h1 {
-  margin-left: -70px;
+  margin-left: 35px;
+  flex-grow: 1;
 }
 
-.social-networks-icons{
-  display: flex;
-  justify-content: space-between;
+header .social-networks-icons{
+  display: none;
 }
 
 header .social-networks-icons {
@@ -34,4 +34,22 @@ header .social-networks-icons {
 .social-networks-icons i {
   font-size: 15px;
   color: black;
+}
+
+@media (min-width: 480px) {
+
+  header {
+    height: 80px;
+  }
+}
+
+@media (min-width: 768px ) {
+
+  header {
+    height: 100px;
+  }
+
+  #menu-icon {
+    display: none;
+  }
 }
