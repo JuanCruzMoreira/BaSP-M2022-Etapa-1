@@ -1,4 +1,59 @@
 aside {
   display: none;
+  float:left;
+  top: 0px;
+  left: 0px;
+  width: 288px;
+  height: 2300px;
+  background-color: #DDDDDD;
+  font-size: 20px;
 }
 
+#search-bar {
+  margin-top: 35px;
+}
+
+#search-bar input{
+  float: left;
+  width: 207px;
+  height: 37px;
+  margin-left: 14px;
+  padding: 10px 0px 11px 12px;
+  border-radius: 4px 0px 0px 4px;
+  background-color: #FFFFFF;
+}
+
+#search-bar button {
+  float: left;
+  width: 53px;
+  height: 37px;
+  margin-right: 14px;
+  padding: 12px 19px 10px;
+  border-radius: 0px 4px 4px 0px;
+  background: #FFFFFF;
+  font-size: 15px;
+}
+
+.nav-menu {
+  position: relative;
+  width: 80%;
+  top: 116px;
+  left: 16px
+}
+
+.nav-menu h2 {
+  font-weight: 700;
+}
+
+.nav-menu li{
+  list-style: none;
+  margin-top: 20px;
+}
+
+@media screen and (min-width:1024px){
+  aside {
+    display: flex;
+    flex-direction: column;
+  }
+
+}

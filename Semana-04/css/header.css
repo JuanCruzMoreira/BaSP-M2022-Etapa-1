@@ -6,7 +6,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  max-width: 1040px;
+  max-width: 1400px;
   margin: auto;
   padding: 0px 10px;
   border-bottom: 5px solid red;
@@ -43,7 +43,7 @@ header .social-networks-icons {
   }
 }
 
-@media (min-width: 768px ) {
+@media (min-width: 1024px ) {
 
   header {
     height: 100px;
