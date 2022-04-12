@@ -1,3 +1,5 @@
+/* MOBILE */
+
 aside {
   display: none;
   float:left;
@@ -8,8 +10,8 @@ aside {
 }
 
 #search-bar {
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 #search-bar input{
   float: left;
@@ -47,14 +49,17 @@ aside {
   list-style: none;
 }
 
+/* TABLET */
+
 @media screen and (min-width:481px){
   aside {
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
-
 }
+
+/* DESKTOP */
 
 @media screen and (min-width:1024px){
   aside {

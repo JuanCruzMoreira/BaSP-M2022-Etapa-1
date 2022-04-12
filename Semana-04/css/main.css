@@ -1,14 +1,15 @@
 /* MOBILE */
 main{
   padding: 0px 32px;
+  background-color: #EEEEEE;
 }
 
 section {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 30px 0px;
   max-width: 100%;
+  padding: 30px 0px;
 }
 
 section:not(:last-child) {
@@ -32,16 +33,15 @@ section:not(:last-child) {
 }
 
 .about-us-img {
+  align-self: center;
   max-width: 100%;
   border-radius: 5px;
-  align-self: center;
 }
 
 .about-us-content .button {
   display: none;
   width: fit-content;
   height: 37px;
-  padding: 9.5px 36px;
 }
 
 /* FUNCTIONALITIES */
@@ -64,8 +64,8 @@ section:not(:last-child) {
 }
 
 .functionalities-item i {
-  font-size: 40px;
   margin-left: 8px;
+  font-size: 40px;
 } 
 
 .functionalities-item-content p {
@@ -96,12 +96,12 @@ section:not(:last-child) {
   margin: 10px 0px;
 }
 
-.why-trackgenix-content button {
+.why-trackgenix-content .button {
   width: 117px;
   height: 37px;
 }
 
-/* Contact */
+/* CONTACT */
 
 #contact h2 {
   margin-bottom: 20px;
@@ -114,13 +114,15 @@ section:not(:last-child) {
 
 #contact-form > input, select {
   height: 37px;
+  padding: 10px 12px;
+  font-size: 14px;
 }
 
 #contact-form > input, select, textarea {
+  width:100%;
   margin-bottom: 10px;
   border: 1px solid #AAAAAA;
   border-radius: 4px;
-  width:100%;
 }
 
 .button-container {
@@ -143,7 +145,7 @@ section:not(:last-child) {
   max-width: 111px;
 }
 
-/* Our story */
+/* OUR STORY */
 
 .our-story-img {
   margin-bottom: 15px;
@@ -153,14 +155,21 @@ section:not(:last-child) {
   height: fit-content;
   max-width: 100%;
 }
-/* Our services */
+/* OUR SERVICES */
 
-/* Search how to align numbers to title */
 #our-services {
   align-items: center;
   gap: 15px
 }
+.our-services-item{
+  min-width: 113px;
+}
 
+.our-services-item ol {
+  padding-left: 20px;
+}
+
+/* TABLET */
 
 @media screen and (min-width: 481px) {
 
@@ -180,7 +189,10 @@ section:not(:last-child) {
     flex-direction: row;
     gap: 10px;
   }
+
   .functionalities-item i {
+    width: 100px;
+    text-align: center;
     font-size: 100px;
   }
 
@@ -223,6 +235,8 @@ section:not(:last-child) {
   }
 }
 
+/* DESKTOP */
+
 @media screen and (min-width: 1024px) {
 
   /* ABOUT US */
@@ -234,9 +248,9 @@ section:not(:last-child) {
   }
 
   .about-us-img {
-    width: 352px;
     flex-basis: 40%;
     flex-grow: 1;
+    width: 352px;
   }
 
   .about-us-content {
@@ -253,14 +267,16 @@ section:not(:last-child) {
 
   .functionalities-item {
     display: flex;
-    align-items: center;
     flex-basis: 40%;
     flex-grow: 1;
+    align-items: center;
   }
   
   .functionalities-item i {
-    font-size: 130px;
+    width: 130px;
     margin-right: 10px;
+    font-size: 130px;
+    text-align: center;
   }
 
   /* WHY TRACKGENIX */
@@ -276,14 +292,14 @@ section:not(:last-child) {
   }
 
   .why-trackgenix-content h2 {
-    font-weight: 500;
-    max-height: 30px;
     flex-grow: 0;
+    max-height: 30px;
+    font-weight: 500;
   }
   
   .why-trackgenix-img {
-    max-width: 280px;
     flex-grow: 1;
+    max-width: 280px;
   }
 
   .why-trackgenix-content button {
@@ -321,11 +337,10 @@ section:not(:last-child) {
   }
 
   .our-story-img {
-    align-self: center;
     flex-basis: 220px;
     flex-grow: 1;
+    align-self: center;
     width: 220px;
-    /* width: 435.61px; */
   }
 
   /* OUR SERVICES */
