@@ -114,15 +114,16 @@ section:not(:last-child) {
 
 #contact-form > input, select {
   height: 37px;
-  padding: 10px 12px;
   font-size: 14px;
 }
 
 #contact-form > input, select, textarea {
   width:100%;
   margin-bottom: 10px;
+  padding: 10px 12px;
   border: 1px solid #AAAAAA;
   border-radius: 4px;
+  background-color: #FFFFFF;
 }
 
 .button-container {
