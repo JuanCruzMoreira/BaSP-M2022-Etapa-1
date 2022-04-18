@@ -20,8 +20,8 @@ h2 {
   flex-basis: 100%;
   width:100%;
   margin-bottom: 10px;
-  font-weight: 500;
   font-size: 20px;
+  font-weight: 500;
   line-height: 30px
 }
 
@@ -32,13 +32,13 @@ h3 {
 }
 
 li {
-  font-weight: 300;
   font-size: 15px;
+  font-weight: 300;
 }
 
 p {
-  font-weight: 400;
   font-size: 15px;
+  font-weight: 400;
 }
 
 a {
@@ -78,14 +78,11 @@ a {
   }
   
   h2 {
-    flex-basis: 100%;
     font-size: 30px;
     font-weight: 700;
-    line-height: 30px
   }
   
   li {
-    font-size: 15px;
     line-height: 30px;
   }
   

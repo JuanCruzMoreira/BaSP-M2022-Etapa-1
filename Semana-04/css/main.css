@@ -218,7 +218,6 @@ section:not(:last-child) {
 
   .button-container .button {
     flex-basis: 181px;
-    flex-grow: 1;
   }
 
   /* OUR SERVICES */
@@ -226,7 +225,6 @@ section:not(:last-child) {
   #our-services {
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
     gap: 32px;
   }
 
@@ -256,7 +254,6 @@ section:not(:last-child) {
 
   .about-us-content {
     flex-basis: 40%;
-    flex-grow: 1;
     margin-right: 47px;
   }
 
@@ -267,7 +264,6 @@ section:not(:last-child) {
   /* FUNCTIONALITIES SECTION */
 
   .functionalities-item {
-    display: flex;
     flex-basis: 40%;
     flex-grow: 1;
     align-items: center;
@@ -277,7 +273,6 @@ section:not(:last-child) {
     width: 130px;
     margin-right: 10px;
     font-size: 130px;
-    text-align: center;
   }
 
   /* WHY TRACKGENIX */
@@ -325,13 +320,13 @@ section:not(:last-child) {
 
   #our-story h2 {
     order: -1;
-    width: 100%;
   }
 
   .our-story-content {
     flex-grow: 1;
     flex-basis: 432px;
   }
+
   .our-story-content p {
     font-size: 15px;
     line-height: 18px;
@@ -347,9 +342,6 @@ section:not(:last-child) {
   /* OUR SERVICES */
 
   #our-services {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     gap: 100px;
   }
   
