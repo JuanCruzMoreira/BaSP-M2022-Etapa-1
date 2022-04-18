@@ -40,3 +40,9 @@ Based on the work of week 02 we styled the landing page using basic CSS properti
 
 This week we made a responsive design of the landing page following the Mobile-first concept.
 Unlike the previous week, we can use flexbox layout model.
+Page can be seen in: https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana-04/index.html
+
+## Week 05
+
+The week's objective consist on do some Javascript exercises including: variables and operators, strings, arrays, control structures and functions.
+Exercise results: https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana-05/index.html
