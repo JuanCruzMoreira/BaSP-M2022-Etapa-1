@@ -1,9 +1,13 @@
+console.log('--- EXERCISE 4: IF - ELSE');
+
 /* Crear un número aleatorio entre 0 y 1 utilizando la función Math.random(), si el valor es mayor 
 o igual que 0,5 mostrar una alerta con el mensaje “Greater than 0,5” y sino un alerta con el 
 mensaje “Lower than 0,5”.*/
 
+console.log('Exercise 4.a:');
+
 var randNum = Math.random();
-console.log(randNum)
+console.log('Random num: ' + randNum)
 if(randNum>=0.5){
   alert('Greater tha 0.5');
 } else {
@@ -22,8 +26,10 @@ mensajes de alerta:
 “Anciano” si es mayor a 75 años.
 */
 
+console.log('Exercise 4.b:');
+
 var age = 25;
-console.log(age);
+console.log('Age: ' + age);
 
 if(age < 2){
   alert('Bebé');

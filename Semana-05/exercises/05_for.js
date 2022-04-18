@@ -1,5 +1,9 @@
+console.log('--- EXERCISE 5: FOR');
+
 /* Crear un array que contenga 5 palabras y recorrer dicho array utilizando un bucle for de 
 JavaScript para mostrar una alerta utilizando cada una de las palabras. */
+
+console.log('Exercise 5.a:');
 
 var wordsArray = ['football', 'basketball', 'tenis', 'handball', 'rugby'];
 for (let word = 0; word < wordsArray.length; word++) {
@@ -9,6 +13,8 @@ for (let word = 0; word < wordsArray.length; word++) {
 /* Al array anterior convertir la primera letra de cada palabra en mayúscula y mostrar una alerta 
 por cada palabra modificada. */
 
+console.log('Exercise 5.b:');
+
 for (let word = 0; word < wordsArray.length; word++) {
   alert(wordsArray[word].substring(0,1).toUpperCase() + 
   wordsArray[word].substring(1, wordsArray[word].length).toLowerCase());
@@ -17,6 +23,8 @@ for (let word = 0; word < wordsArray.length; word++) {
 /* Crear una variable llamada “sentence” que tenga un string vacío, luego al array del punto a) 
 recorrerlo con un bucle for para ir guardando cada palabra dentro de la variable sentence. 
 Al final mostrar una única alerta con la cadena completa. */
+
+console.log('Exercise 5.c:');
 
 var sentence = ''
 
@@ -31,10 +39,12 @@ la repetición, es decir que al final de la ejecución del bucle for debería ha
 dentro del array, desde el número 0 hasta al número 9. Mostrar por la consola del navegador el 
 array final (utilizar console.log). */
 
+console.log('Exercise 5.d:');
+
 var eArray = [];
 
 for (let i = 0; i < 10; i++) {
   eArray.push(i);
 }
 
-console.log(eArray);
+console.log('Positions array: ' + eArray);
