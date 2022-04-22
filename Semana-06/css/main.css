@@ -1,0 +1,347 @@
+/* MOBILE */
+main{
+  padding: 0px 32px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 100%;
+  padding: 30px 0px;
+}
+
+section:not(:last-child) {
+  border-bottom: 1px solid #AAAAAA;
+}
+
+/* ABOUT US */
+
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.about-us-content h2 {
+  flex-grow: 0;
+  margin: 20px 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.about-us-img {
+  align-self: center;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.about-us-content .button {
+  display: none;
+  width: fit-content;
+  height: 37px;
+}
+
+/* FUNCTIONALITIES */
+
+#functionalities {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 35px;
+}
+
+#functionalities h2 {
+  width: 100%;
+  margin-bottom: -10px;
+}
+
+.functionalities-item {
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.functionalities-item i {
+  margin-left: 8px;
+  font-size: 40px;
+} 
+
+.functionalities-item-content p {
+  font-size: 10px;
+  line-height: 15px;
+}
+
+/* WHY TRACKGENIX */
+.why-trackgenix-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.why-trackgenix-img {
+  align-self: center;
+  width: 347px;
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.why-trackgenix-content h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.why-trackgenix-content ul {
+  margin: 10px 0px;
+}
+
+.why-trackgenix-content .button {
+  width: 117px;
+  height: 37px;
+}
+
+/* CONTACT */
+
+#contact h2 {
+  margin-bottom: 20px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-form > input, select {
+  height: 37px;
+  font-size: 14px;
+}
+
+#contact-form > input, select, textarea {
+  width:100%;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.submit-button{
+  flex-basis: 171px;
+  flex-grow: 1;
+  max-width: 171px;
+  background-color: #FF5500;
+  color: white;
+}
+.reset-button {
+  flex-basis: 111px;
+  flex-grow: 1;
+  max-width: 111px;
+}
+
+/* OUR STORY */
+
+.our-story-img {
+  margin-bottom: 15px;
+}
+
+.our-story-content p {
+  height: fit-content;
+  max-width: 100%;
+}
+/* OUR SERVICES */
+
+#our-services {
+  align-items: center;
+  gap: 15px
+}
+.our-services-item{
+  min-width: 113px;
+}
+
+.our-services-item ol {
+  padding-left: 20px;
+}
+
+/* TABLET */
+
+@media screen and (min-width: 481px) {
+
+  main {
+    width: 75%;
+  }
+  /* ABOUT US */
+
+  .about-us-content .button {
+    display: block;
+  }
+
+  /* FUNCTIONALITIES SECTION */
+
+  .functionalities-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .functionalities-item i {
+    width: 100px;
+    text-align: center;
+    font-size: 100px;
+  }
+
+  /* CONTACT US */
+
+  #contact-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+  }
+
+  #contact-form > input {
+    flex-basis: 40%;
+    flex-grow: 1;
+  }
+
+  .button-container {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 39px
+  }
+
+  .button-container .button {
+    flex-basis: 181px;
+  }
+
+  /* OUR SERVICES */
+
+  #our-services {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 32px;
+  }
+
+  .our-services-item h2 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 1024px) {
+
+  /* ABOUT US */
+
+  #about-us {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: auto;
+  }
+
+  .about-us-img {
+    flex-basis: 40%;
+    flex-grow: 1;
+    width: 352px;
+  }
+
+  .about-us-content {
+    flex-basis: 40%;
+    margin-right: 47px;
+  }
+
+  .about-us-content h2 {
+    margin: 0px;
+  }
+  
+  /* FUNCTIONALITIES SECTION */
+
+  .functionalities-item {
+    flex-basis: 40%;
+    flex-grow: 1;
+    align-items: center;
+  }
+  
+  .functionalities-item i {
+    width: 130px;
+    margin-right: 10px;
+    font-size: 130px;
+  }
+
+  /* WHY TRACKGENIX */
+
+  #why-trackgenix  {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .why-trackgenix-content {
+    max-width: 350px;
+  }
+
+  .why-trackgenix-content h2 {
+    flex-grow: 0;
+    max-height: 30px;
+    font-weight: 500;
+  }
+  
+  .why-trackgenix-img {
+    flex-grow: 1;
+    max-width: 280px;
+  }
+
+  .why-trackgenix-content button {
+    width: 131px;
+    margin: 50px 0px;
+    font-size: 15px;
+  }
+
+  /* CONTACT US */
+  
+  .button-container {
+    gap: 45px
+  }
+
+  /* OUR STORY */
+
+  #our-story {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+  }
+
+  #our-story h2 {
+    order: -1;
+  }
+
+  .our-story-content {
+    flex-grow: 1;
+    flex-basis: 432px;
+  }
+
+  .our-story-content p {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .our-story-img {
+    flex-basis: 220px;
+    flex-grow: 1;
+    align-self: center;
+    width: 220px;
+  }
+
+  /* OUR SERVICES */
+
+  #our-services {
+    gap: 100px;
+  }
+  
+}
