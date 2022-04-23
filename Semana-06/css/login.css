@@ -35,6 +35,14 @@ form > input {
   background-color: #FFFFFF;
 }
 
+.error {
+  color: red;
+}
+
+.hidden-error {
+  display: none;
+}
+
 #remember {
   font-size: 13px;
 }

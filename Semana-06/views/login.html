@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../css/nav.css">
   <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../javascript/login.js"></script>
   <script src="https://kit.fontawesome.com/8bedfba391.js" crossorigin="anonymous"></script>
 
   <title>Login page</title>
@@ -46,13 +48,15 @@
       <div class="form-container">
         <h2>Login</h2>
         <form id="login">
-          <input type="text" placeholder="Enter your email" name="email">
-          <input type="password" placeholder="Enter your password" name="psw">
+          <input type="text" placeholder="Enter your email" name="email" class="email">
+          <p id="invalid-email" class="error hidden-error">Enter a valid email</p>
+          <input type="password" placeholder="Enter your password" name="psw" class="psw">
+          <p id="psw-message" class="error hidden-error">Password incorrect</p>
           <label id="remember">
-            <input type="checkbox"> Remember me
+          <input type="checkbox"> Remember me
           </label>
           <a href="#" class="f-psw">Forgot password?</a>
-          <input type="submit" value="Continue" class="button">
+          <input type="button" value="Continue" class="button">
         </form>
       </div>
     </main>
