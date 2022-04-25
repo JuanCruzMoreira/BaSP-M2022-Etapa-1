@@ -35,6 +35,16 @@ h3 {
   line-height: 30px;
 }
 
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -14px;
+}
+
+.hidden{
+  display: none;
+}
+
 li {
   font-size: 15px;
   font-weight: 300;

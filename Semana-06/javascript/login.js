@@ -1,44 +1,65 @@
 window.onload = function() {
 
-  const correctPasw = 'MyPassword01';
-
   console.log('Hi!');
-  var button = document.querySelector(".button");
-  var email = document.querySelector(".email");
+  
+  // EMAIL VALIDATION
+  
+  var eInput = document.getElementById("email-input");
+  var eRequired = document.getElementById("email-required");
+  var eInvalid = document.getElementById("invalid-email");
+  
+  eInput.addEventListener('blur', function(){
+    var eRegEx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+
+    if (eInput.value == '') {
+      eRequired.classList.remove('hidden');
+      eMess = 'Email is required';
+    } else if (!eRegEx.test(eInput.value)){
+      eInvalid.classList.remove('hidden');
+      eMess = 'Invalid mail format';
+    } else {
+      eMess = eInput.value;
+    }
+  })
+  
+  eInput.addEventListener('focus', function(){
+    eInvalid.classList.add('hidden');
+    eRequired.classList.add('hidden');
+  })
+  
+  // PASSWORD VALIDATION
+  
+  const correctPasw = 'MyPassword01';
   var password = document.querySelector(".psw");
-  var errorEmail = document.getElementById("invalid-email");
-  var errorPsw = document.getElementById("psw-message");
+  var pswRequired = document.getElementById("psw-required")
+  var pswInc = document.getElementById("psw-inc");
+  
+  password.addEventListener('blur', function(){
+    console.log(password.value);
 
-  console.log(button);
-
-   // Investigate how to do this with toggle
-
-  email.addEventListener('blur', function(){
-    if (email.value !== 'email-valido') {
-      errorEmail.classList.remove('hidden-error');
+    if (password.value == '') {
+      pswRequired.classList.remove('hidden');
+      pswMess = 'Password is required';
+    } else if (password.value !== correctPasw){
+      pswInc.classList.remove('hidden');
+      pswMess = 'Wrong password';
+    } else {
+      pswMess = password.value;
     }
   })
 
-  email.addEventListener('focus', function(){
-      errorEmail.classList.add('hidden-error');
-  })
-
-  // Ask about password validations on blur/focus event
-
-  password.addEventListener('blur', function(){
-    if(password !== correctPasw )
-    errorPsw.classList.remove('hidden-error')
-  })
-
   password.addEventListener('focus', function(){
-    errorPsw.classList.add('hidden-error');
-})
+    pswInc.classList.add('hidden');
+    pswRequired.classList.add('hidden');
+  })
+
+  // BUTTON
+  
+  var button = document.querySelector(".button");
 
   button.onclick = function(){
-    
-    if (password.value !== correctPasw){
-      errorPsw.classList.remove('hiddenError');
-    } 
+    alert('Mail:' + eMess + 'Password:' + pswMess);
+    console.log(eMess);
+  }
 
-}
 }

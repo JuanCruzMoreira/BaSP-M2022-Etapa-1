@@ -38,7 +38,7 @@
         <span>Menu</span>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="sign-up.html">Sign up</a></li>
+          <li><a href="employee-sign-up.html">Sign up</a></li>
           <li><a href="#">Log in</a></li>
           <li><a href="#">Contact us</a></li>
         </ul>
@@ -48,10 +48,12 @@
       <div class="form-container">
         <h2>Login</h2>
         <form id="login">
-          <input type="text" placeholder="Enter your email" name="email" class="email">
-          <p id="invalid-email" class="error hidden-error">Enter a valid email</p>
+          <input id="email-input" type="text" placeholder="Enter your email" name="email">
+          <p id="email-required" class="error hidden">Email is required</p>
+          <p id="invalid-email" class="error hidden">Enter a valid email</p>
           <input type="password" placeholder="Enter your password" name="psw" class="psw">
-          <p id="psw-message" class="error hidden-error">Password incorrect</p>
+          <p id="psw-required" class="error hidden">Password is required</p>
+          <p id="psw-inc" class="error hidden">Incorrect password</p>
           <label id="remember">
           <input type="checkbox"> Remember me
           </label>
