@@ -40,7 +40,6 @@ window.onload = function() {
   var pswInc = document.getElementById("psw-inc");
   
   password.addEventListener('blur', function(){
-    console.log(password.value);
 
     if (password.value === '') {
       pswRequired.classList.remove('hidden');
@@ -68,8 +67,7 @@ window.onload = function() {
   var button = document.querySelector(".button");
 
   button.onclick = function(){
-    alert('Mail:' + eMess + '\nPassword:' + pswMess);
-    console.log(eMess);
+    alert('Mail: ' + eMess + '\nPassword: ' + pswMess);
   }
 
 }

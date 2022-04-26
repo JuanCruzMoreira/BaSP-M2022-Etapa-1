@@ -65,7 +65,7 @@
   
             <div>
               <label for="id">ID</label>          
-              <input type="number" placeholder="ID" name="id">
+              <input type="text" placeholder="ID" name="id">
               <p id="id-required" class="error hidden">ID number is a required field</p>
               <p id="id-too-short" class="error hidden">ID number is too short</p>
               <p id="id-format" class="error hidden">ID can contain only numbers</p>
@@ -75,13 +75,13 @@
               <label for="d-birth">Date of birth</label>          
               <input type="date" placeholder="Enter date" name="d-birth">
               <p id="birth-required" class="error hidden">Date of birth is a required field</p>
-              <p id="future-date" class="error hidden">Invalid date</p>
+              <p id="future-date" class="error hidden">Date must be earlier</p>
               <p id="over-18" class="error hidden">You must be +18</p>
             </div>
 
             <div>
               <label for="phone">Phone number</label>          
-              <input type="number" placeholder="" name="phone">
+              <input type="text" placeholder="" name="phone">
               <p id="phone-required" class="error hidden">Phone number is a required field</p>
               <p id="phone-too-short" class="error hidden">Phone number is too short</p>
               <p id="phone-format" class="error hidden">Phone can only contain numbers</p>

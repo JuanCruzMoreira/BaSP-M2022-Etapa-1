@@ -3,7 +3,7 @@ window.onload = function(){
 
   var inputs = document.getElementsByTagName('input');
   var messages = document.getElementsByTagName('p');
-  var alertValues = [];
+  var alertValues = ['mess 1', 'mess 2', 'mess 3', 'mess 4'];
   var labels = document.getElementsByTagName('label');
   var currentDate = new Date(Date.now());
 
@@ -15,17 +15,17 @@ inputs[1].addEventListener('blur', function(){
   if (isEmpty(inputs[1].value)) {
     messages[0].classList.remove('hidden');
     inputs[1].classList.add('red-border');
-    alertValues.push(messages[0].value);
+    alertValues[0] = (messages[0].textContent);
     } else if (inputs[1].value.length < 3) {
       messages[1].classList.remove('hidden');
       inputs[1].classList.add('red-border');
-      alertValues.push(messages[1].value);
-    } if (hasNumbers(inputs[1].value)) {
+      alertValues[0] = (messages[1].textContent);
+    } else if (hasNumbers(inputs[1].value)) {
       messages[2].classList.remove('hidden');
       inputs[1].classList.add('red-border');
-      alertValues.push(messages[2].value);
+      alertValues[0] = (messages[2].textContent);
     } else {
-      alertValues.push(inputs[1].value);
+      alertValues[0] = (inputs[1].value);
       inputs[1].classList.add('green-border');
     }
   })
@@ -44,17 +44,17 @@ inputs[1].addEventListener('blur', function(){
     if (isEmpty(inputs[2].value)) {
       messages[3].classList.remove('hidden');
       inputs[2].classList.add('red-border');
-      alertValues.push(messages[3].value);
+      alertValues[1] = (messages[3].textContent);
     } else if (inputs[2].value.length < 3) {
       messages[4].classList.remove('hidden');
       inputs[2].classList.add('red-border');
-      alertValues.push(messages[4].value);
-    } if (hasNumbers(inputs[2].value)) {
+      alertValues[1] = (messages[4].textContent);
+    } else if (hasNumbers(inputs[2].value)) {
       messages[5].classList.remove('hidden');
       inputs[2].classList.add('red-border');
-      alertValues.push(messages[5].value);
+      alertValues[1] = (messages[5].textContent);
     } else {
-      alertValues.push(inputs[2].value);
+      alertValues[1] = (inputs[2].value);
       inputs[2].classList.add('green-border');
     }
   })
@@ -74,17 +74,17 @@ inputs[1].addEventListener('blur', function(){
     if (isEmpty(inputs[3].value)) {
       messages[6].classList.remove('hidden');
       inputs[3].classList.add('red-border');
-      alertValues.push(messages[6].value);
+      alertValues[2] = (messages[6].textContent);
     } else if (inputs[3].value.length < 8) {
       messages[7].classList.remove('hidden');
       inputs[3].classList.add('red-border');
-      alertValues.push(messages[7].value);
-    } if (!onlyNumbers(inputs[3].value)){
+      alertValues[2] = (messages[7].textContent);
+    } else if (!onlyNumbers(inputs[3].value)){
       messages[8].classList.remove('hidden');
       inputs[3].classList.add('red-border');
-      alertValues.push(messages[8].value);
+      alertValues[2] = (messages[8].textContent);
     } else {
-      alertValues.push(inputs[3].value);
+      alertValues[2] = (inputs[3].value);
       inputs[3].classList.add('green-border');
     }
   })
@@ -102,20 +102,23 @@ inputs[1].addEventListener('blur', function(){
   
   inputs[4].addEventListener('blur', function(){
 
+     validateDate(inputs[4].value)
+     formDate(inputs[4].value)
+
     if (isEmpty(inputs[4].value)) {
       messages[9].classList.remove('hidden');
       inputs[4].classList.add('red-border');
-      alertValues.push(messages[9].value);
-    } else if (inputs[4].value > currentDate){
+      alertValues[3] = (messages[9].textContent);
+    } else if (!validateDate(inputs[4].value)){
       messages[10].classList.remove('hidden');
       inputs[4].classList.add('red-border');
-      alertValues.push(messages[10].value);
+      alertValues[3] = (messages[10].textContent);
     } else if (!isAdult(inputs[4].value)) {
       messages[11].classList.remove('hidden');
       inputs[4].classList.add('red-border');
-      alertValues.push(messages[11].value);
+      alertValues[3] = (messages[11].textContent);
     } else {
-      alertValues.push(inputs[4].value);
+      alertValues[3] = (formDate(inputs[4].value));
       inputs[4].classList.add('green-border');
     }
   })
@@ -135,17 +138,17 @@ inputs[1].addEventListener('blur', function(){
     if (isEmpty(inputs[5].value)) {
       messages[12].classList.remove('hidden');
       inputs[5].classList.add('red-border');
-      alertValues.push(messages[12].value);
+      alertValues[4] = (messages[12].textContent);
     } else if (inputs[5].value.length < 10) {
       messages[13].classList.remove('hidden');
       inputs[5].classList.add('red-border');
-      alertValues.push(messages[13].value);
-    } if (!onlyNumbers(inputs[5])) {
+      alertValues[4] = (messages[13].textContent);
+    } else if (!onlyNumbers(inputs[5].value)) {
       messages[14].classList.remove('hidden');
       inputs[5].classList.add('red-border');
-      alertValues.push(messages[14].value);
+      alertValues[4] = (messages[14].textContent);
     } else {
-      alertValues.push(inputs[5].value);
+      alertValues[4] = (inputs[5].value);
       inputs[5].classList.add('green-border');
     }
   })
@@ -162,20 +165,21 @@ inputs[1].addEventListener('blur', function(){
   
   inputs[6].addEventListener('blur', function(){
     
+    adressValidator(inputs[6].value)
     if (isEmpty(inputs[6].value)) {
       messages[15].classList.remove('hidden');
       inputs[6].classList.add('red-border');
-      alertValues.push(messages[15].value);
+      alertValues[5] = (messages[15].textContent);
     } else if (inputs[6].value.length < 5) {
       messages[16].classList.remove('hidden');
       inputs[6].classList.add('red-border');
-      alertValues.push(messages[16].value);
-    } if (!adressValidator(inputs[6].value)) {
+      alertValues[5] = (messages[16].textContent);
+    } else if (!adressValidator(inputs[6].value)) {
       messages[17].classList.remove('hidden');
       inputs[6].classList.add('red-border');
-      alertValues.push(messages[17].value);
+      alertValues[5] = (messages[17].textContent);
     } else {
-      alertValues.push(inputs[6].value);
+      alertValues[5] = (inputs[6].value);
       inputs[6].classList.add('green-border');
     }
   })
@@ -195,13 +199,13 @@ inputs[1].addEventListener('blur', function(){
     if (isEmpty(inputs[7].value)) {
       messages[18].classList.remove('hidden');
       inputs[7].classList.add('red-border');
-      alertValues.push(messages[18].value);
+      alertValues[6] = (messages[18].textContent);
     } else if (inputs[7].value.length < 3) {
       messages[19].classList.remove('hidden');
       inputs[7].classList.add('red-border');
-      alertValues.push(messages[19].value);
+      alertValues[6] = (messages[19].textContent);
     } else {
-      alertValues.push(inputs[7].value);
+      alertValues[6] = (inputs[7].value);
       inputs[7].classList.add('green-border');
     }
   })
@@ -221,17 +225,17 @@ inputs[1].addEventListener('blur', function(){
     if (isEmpty(inputs[8].value)) {
       messages[20].classList.remove('hidden');
       inputs[8].classList.add('red-border');
-      alertValues.push(messages[20].value);
+      alertValues[7] = (messages[20].textContent);
     } else if (inputs[8].value.length < 4 || inputs[8].value.length > 5) {
       messages[21].classList.remove('hidden');
       inputs[8].classList.add('red-border');
-      alertValues.push(messages[21].value);
-    } if (!onlyNumbers(inputs[8])) {
+      alertValues[7] = (messages[21].textContent);
+    } else if (!onlyNumbers(inputs[8].value)) {
       messages[22].classList.remove('hidden');
       inputs[8].classList.add('red-border');
-      alertValues.push(messages[22].value);
+      alertValues[7] = (messages[22].textContent);
     } else {
-      alertValues.push(inputs[8].value);
+      alertValues[7] = (inputs[8].value);
       inputs[8].classList.add('green-border');
     }
   })
@@ -249,16 +253,18 @@ inputs[1].addEventListener('blur', function(){
   
   inputs[9].addEventListener('blur', function(){
     
+    var eRegEx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+
     if (isEmpty(inputs[9].value)) {
       messages[23].classList.remove('hidden');
       inputs[9].classList.add('red-border');
-      alertValues.push(messages[23].value);
+      alertValues[8] = (messages[23].textContent);
     } else if (!eRegEx.test(inputs[9].value)){
       messages[24].classList.remove('hidden');
       inputs[9].classList.add('red-border');
-      alertValues.push(messages[24].value);
+      alertValues[8] = (messages[24].textContent);
     } else {
-      alertValues.push(inputs[9].value);
+      alertValues[8] = (inputs[9].value);
       inputs[9].classList.add('green-border');
     }
   })
@@ -275,19 +281,23 @@ inputs[1].addEventListener('blur', function(){
   inputs[10].addEventListener('blur', function(){
     
     if (isEmpty(inputs[10].value)) {
+      alertValues[9] = (messages[25].textContent);
       messages[25].classList.remove('hidden');
       inputs[10].classList.add('red-border');
     } else if (inputs[10].value.length < 8 && hasNumAndChar(inputs[10].value)) {
+      alertValues[9] = (messages[26].textContent);
       messages[26].classList.remove('hidden');
       inputs[10].classList.add('red-border');
     } else if (inputs[10].value.length < 8) {
+      alertValues[9] = (messages[27].textContent);
       messages[27].classList.remove('hidden');
       inputs[10].classList.add('red-border');
     } else if (hasNumAndChar(inputs[10].value)) {
+      alertValues[9] = (messages[28].textContent);
       messages[28].classList.remove('hidden');
       inputs[10].classList.add('red-border');
     } else {
-      alertValues.push(inputs[10].value);
+      alertValues[9] = (inputs[10].value);
       inputs[10].classList.add('green-border');
     }
   })
@@ -306,13 +316,15 @@ inputs[1].addEventListener('blur', function(){
   inputs[11].addEventListener('blur', function(){
     
     if (isEmpty(inputs[11].value)) {
+      alertValues[10] = (messages[29].textContent);
       messages[29].classList.remove('hidden');
       inputs[11].classList.add('red-border');
     } else if (inputs[11].value !== inputs[10].value) {
+      alertValues[10] = (messages[30].textContent);
       messages[30].classList.remove('hidden');
       inputs[11].classList.add('red-border');
     } else {
-      alertValues.push(inputs[11].value);
+      alertValues[10] = (inputs[11].value);
       inputs[11].classList.add('green-border');
     }
   })
@@ -330,14 +342,10 @@ inputs[1].addEventListener('blur', function(){
 
   button.onclick = function(){
   
-    for (i = 0; i < inputs.length; i++) {
-      console.log(labels[i].textContent + ': ' + alertValues[i] + '\n');
-    }
   }
 
-}
-
-// AUX FUNCTIONS
+  
+  // AUX FUNCTIONS
 
 function hasNumbers (string) {
   var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -346,8 +354,8 @@ function hasNumbers (string) {
     if (numbers.includes(string[i])) {
       return true;
     }
-    return false
   }
+  return false
 }
 
 function hasNumAndChar (string) {
@@ -357,8 +365,10 @@ function hasNumAndChar (string) {
   for (i = 0; i < string.length; i++) {
     if (hasNumbers(string[i])) {
       num++;
+      console.log('num ' + num)
     } else {
       char++;
+      console.log('char ' + char)
     }
   }
 
@@ -398,4 +408,42 @@ function isAdult (date){
   var currentDate = new Date(Date.now());
 
   return new Date(currentDate - date).getFullYear() - 1970 >= 18;
+}
+
+function formDate(dateToForm) {
+
+  var [year, month, day] = dateToForm.split("-");
+  var formattedDate = `${day}/${month}/${year}`;
+  
+  return  formattedDate;
+}
+
+function validateDate(dateToValidate){
+
+  var [year, month, day] = dateToValidate.split("-");
+  var isoFormattedStr = `${year}/${month}/${day}`;
+  var date = new Date(isoFormattedStr);
+  var currentDate = new Date(Date.now());
+
+  return currentDate >= date
+}
+
+function alertMessage () {
+  var messArray = [];
+
+/*   for (i = 0; i < labels.length; i++) {
+    messArray.push(labels[i].textContent + ': ' + alertValues[i]);
+    console.log(labels[i].textContent);
+    console.log(alertValues[i]);
+  } */
+
+  console.log(alertValues)
+
+/*   for (let i = 0; i < messages.length; i++) {
+    console.log(i + ' ' + messages[i].textContent);
+    
+  }
+ */    console.log(messArray)
+    return messArray;
+}
 }

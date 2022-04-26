@@ -274,6 +274,17 @@ section:not(:last-child) {
     font-size: 130px;
   }
 
+  .functionalities-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .functionalities-item-content p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
   /* WHY TRACKGENIX */
 
   #why-trackgenix  {
