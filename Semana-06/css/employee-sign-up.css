@@ -15,27 +15,30 @@ main{
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-#sign-up {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   font-size: 36px;
   font-weight: normal;
   text-align: center;
 }
 
-form > div {
+#sign-up {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 20px;
+  justify-content: space-between;
+}
+
+#sign-up > div {
   display: flex;
   flex-direction: column;
+  flex-basis: 200px;
+  flex-grow: 1;
+  gap: 5px;
 }
 
 label {
   font-size: 18px;
-  margin-bottom: 8px;
 }
 
 div > input {
@@ -51,6 +54,7 @@ div > input {
 
 .button {
   width: 80%;
+  margin: auto;
   align-self: center;
 }
 
@@ -65,4 +69,9 @@ div > input {
 /* DESKTOP */
 
 @media screen and (min-width: 1025spx) {
+
+  #sign-up > div {
+  max-width: calc((100% /2) -15px);
+  }
 }
+

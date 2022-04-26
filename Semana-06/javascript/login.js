@@ -13,16 +13,21 @@ window.onload = function() {
 
     if (eInput.value === '') {
       eRequired.classList.remove('hidden');
+      eInput.classList.add('red-border');
       eMess = 'Email is required';
     } else if (!eRegEx.test(eInput.value)){
       eInvalid.classList.remove('hidden');
+      eInput.classList.add('red-border');
       eMess = 'Invalid mail format';
     } else {
+      eInput.classList.add('green-border');
       eMess = eInput.value;
     }
   })
   
   eInput.addEventListener('focus', function(){
+    eInput.classList.remove('red-border');
+    eInput.classList.remove('green-border');
     eInvalid.classList.add('hidden');
     eRequired.classList.add('hidden');
   })
@@ -31,7 +36,7 @@ window.onload = function() {
   
   const correctPasw = 'MyPassword01';
   var password = document.querySelector(".psw");
-  var pswRequired = document.getElementById("psw-required")
+  var pswRequired = document.getElementById("psw-required");
   var pswInc = document.getElementById("psw-inc");
   
   password.addEventListener('blur', function(){
@@ -39,16 +44,21 @@ window.onload = function() {
 
     if (password.value === '') {
       pswRequired.classList.remove('hidden');
+      password.classList.add('red-border');
       pswMess = 'Password is required';
     } else if (password.value !== correctPasw){
       pswInc.classList.remove('hidden');
+      password.classList.add('red-border');
       pswMess = 'Wrong password';
     } else {
       pswMess = password.value;
+      password.classList.add('green-border');
     }
   })
 
   password.addEventListener('focus', function(){
+    password.classList.remove('red-border');
+    password.classList.remove('green-border');
     pswInc.classList.add('hidden');
     pswRequired.classList.add('hidden');
   })
