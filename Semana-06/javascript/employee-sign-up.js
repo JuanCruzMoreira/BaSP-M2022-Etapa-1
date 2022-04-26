@@ -138,7 +138,7 @@ inputs[1].addEventListener('blur', function(){
     } else if (inputs[6].value.length < 5) {
       messages[16].classList.remove('hidden');
       alertValues.push(messages[16].value);
-    } if (!adressValidator(input[6].value)) {
+    } if (!adressValidator(inputs[6].value)) {
       messages[17].classList.remove('hidden');
       alertValues.push(messages[17].value);
     }
