@@ -11,22 +11,22 @@ window.onload = function(){
 
 // NAME
 
-inputs[1].addEventListener('blur', function(){
-  if (isEmpty(inputs[1].value)) {
-    messages[0].classList.remove('hidden');
-    inputs[1].classList.add('red-border');
-    alertValues[0] = (messages[0].textContent);
+  inputs[1].addEventListener('blur', function(){
+    if (isEmpty(inputs[1].value)) {
+      messages[0].classList.remove('hidden');
+      inputs[1].classList.add('red-border');
+      alertValues[0] = (messages[0].textContent);
     } else if (inputs[1].value.length < 3) {
-      messages[1].classList.remove('hidden');
-      inputs[1].classList.add('red-border');
-      alertValues[0] = (messages[1].textContent);
+        messages[1].classList.remove('hidden');
+        inputs[1].classList.add('red-border');
+        alertValues[0] = (messages[1].textContent);
     } else if (hasNumbers(inputs[1].value)) {
-      messages[2].classList.remove('hidden');
-      inputs[1].classList.add('red-border');
-      alertValues[0] = (messages[2].textContent);
+        messages[2].classList.remove('hidden');
+        inputs[1].classList.add('red-border');
+        alertValues[0] = (messages[2].textContent);
     } else {
-      alertValues[0] = (inputs[1].value);
-      inputs[1].classList.add('green-border');
+        alertValues[0] = (inputs[1].value);
+        inputs[1].classList.add('green-border');
     }
   })
   
@@ -284,7 +284,7 @@ inputs[1].addEventListener('blur', function(){
       alertValues[9] = (messages[25].textContent);
       messages[25].classList.remove('hidden');
       inputs[10].classList.add('red-border');
-    } else if (inputs[10].value.length < 8 && hasNumAndChar(inputs[10].value)) {
+    } else if (inputs[10].value.length < 8 && !validatePass(inputs[10].value)) {
       alertValues[9] = (messages[26].textContent);
       messages[26].classList.remove('hidden');
       inputs[10].classList.add('red-border');
@@ -292,7 +292,7 @@ inputs[1].addEventListener('blur', function(){
       alertValues[9] = (messages[27].textContent);
       messages[27].classList.remove('hidden');
       inputs[10].classList.add('red-border');
-    } else if (hasNumAndChar(inputs[10].value)) {
+    } else if (!validatePass(inputs[10].value)) {
       alertValues[9] = (messages[28].textContent);
       messages[28].classList.remove('hidden');
       inputs[10].classList.add('red-border');
@@ -341,10 +341,9 @@ inputs[1].addEventListener('blur', function(){
   var button = document.querySelector(".button");
 
   button.onclick = function(){
-  
+    alert(alertMessage())
   }
 
-  
   // AUX FUNCTIONS
 
 function hasNumbers (string) {
@@ -357,25 +356,29 @@ function hasNumbers (string) {
   }
   return false
 }
+function validatePass(string) {
+  var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  var alph = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
+      'r', 's', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-function hasNumAndChar (string) {
+  var minValue = string.toLowerCase();
   var num = 0;
   var char = 0;
-
+  var special = false;
   for (i = 0; i < string.length; i++) {
-    if (hasNumbers(string[i])) {
-      num++;
-      console.log('num ' + num)
-    } else {
-      char++;
-      console.log('char ' + char)
-    }
+      if (numbers.includes(string[i])) {
+          num++;
+      } else if (alph.includes(minValue[i])) {
+          char++;
+      } else {
+          special = true;
+      }
   }
-
-  if (num > 0 && char > 0) {
+  if (num >= 1 && char >= 1 && special == false) {
     return true;
+  } else {
+    return false;
   }
-  return false;
 }
 
 function onlyNumbers (string) {
@@ -396,54 +399,57 @@ function isEmpty (string){
 
 function adressValidator (string){
 
-  hasSpace = string.indexOf(' ') >= 0;
-  hasNumChar = hasNumbers (string);
+  var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  var alph = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
+      'r', 's', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-  return hasSpace && hasNumChar;
-}
+  spacePos = string.indexOf(' ');
+  hasSpace = false;
 
-function isAdult (date){
-  
-  var date = new Date(date);
-  var currentDate = new Date(Date.now());
-
-  return new Date(currentDate - date).getFullYear() - 1970 >= 18;
-}
-
-function formDate(dateToForm) {
-
-  var [year, month, day] = dateToForm.split("-");
-  var formattedDate = `${day}/${month}/${year}`;
-  
-  return  formattedDate;
-}
-
-function validateDate(dateToValidate){
-
-  var [year, month, day] = dateToValidate.split("-");
-  var isoFormattedStr = `${year}/${month}/${day}`;
-  var date = new Date(isoFormattedStr);
-  var currentDate = new Date(Date.now());
-
-  return currentDate >= date
-}
-
-function alertMessage () {
-  var messArray = [];
-
-/*   for (i = 0; i < labels.length; i++) {
-    messArray.push(labels[i].textContent + ': ' + alertValues[i]);
-    console.log(labels[i].textContent);
-    console.log(alertValues[i]);
-  } */
-
-  console.log(alertValues)
-
-/*   for (let i = 0; i < messages.length; i++) {
-    console.log(i + ' ' + messages[i].textContent);
-    
+  if (spacePos >= 0) {
+    hasSpace = true;
+    adressChar = string.substring(0, spacePos);
+    adressNum = string.substring(spacePos, string.length); 
+    console.log(adressChar);
+    console.log(adressNum);
   }
- */    console.log(messArray)
-    return messArray;
+
+  return hasSpace && !hasNumbers(adressChar) && hasNumbers(adressNum);
 }
+
+  function isAdult (date){
+    
+    var date = new Date(date);
+    var currentDate = new Date(Date.now());
+
+    return new Date(currentDate - date).getFullYear() - 1970 >= 18;
+  }
+
+  function formDate(dateToForm) {
+
+    var [year, month, day] = dateToForm.split("-");
+    var formattedDate = `${day}/${month}/${year}`;
+    
+    return  formattedDate;
+  }
+
+  function validateDate(dateToValidate){
+
+    var [year, month, day] = dateToValidate.split("-");
+    var isoFormattedStr = `${year}/${month}/${day}`;
+    var date = new Date(isoFormattedStr);
+    var currentDate = new Date(Date.now());
+
+    return currentDate >= date
+  }
+
+  function alertMessage () {
+    var messArray = [];
+
+      for (i = 0; i < labels.length; i++) {
+      messArray.push(labels[i].textContent + ': ' + alertValues[i]);
+    } 
+
+      return messArray.join('\n');
+  }
 }
