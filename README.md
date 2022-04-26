@@ -46,3 +46,7 @@ Page can be seen in: https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana-04/i
 
 The week's objective consist on do some Javascript exercises including: variables and operators, strings, arrays, control structures and functions.
 Exercise results: https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana-05/index.html
+
+## Week 06
+
+This week we worked in Trackgenix web app. Added login and employee-sign-up screens and made it responsive. Using javascript under ES5 specification we add validations for the inputs. Page can be seen in https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
