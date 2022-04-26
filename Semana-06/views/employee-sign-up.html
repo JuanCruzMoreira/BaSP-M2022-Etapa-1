@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/employee-sign-up.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <script src="../javascript/employee-sign-up.js"></script>
+    <script src="https://kit.fontawesome.com/8bedfba391.js" crossorigin="anonymous"></script>
+    <title>Sign up page</title>
+  </head>
+  <body>
+    <header>
+      <i id="menu-icon" class="fa-solid fa-bars"></i>
+      <h1>Trackgenix S.A.</h1>
+      <div class="social-networks-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </header>
+    <div class="main-container">
+      <aside>
+        <form action="#" id="search-bar">
+          <input type="search" placeholder="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+        <div class="nav-menu">
+          <span>Menu</span>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+      </aside>
+      <main>
+        <div class="form-container">
+          <h2>Sign Up</h2>
+          <form id="sign-up">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" placeholder="Name" name="name">
+              <p id="n-required" class="error hidden">Name is a required field</p>
+              <p id="n-too-short" class="error hidden">Name is too short</p>
+              <p id="n-format" class="error hidden">Name can't contain numbers</p>
+            </div>
+  
+            <div>
+              <label for="ln">Last Name</label>          
+              <input type="text" placeholder="Last Name" name="ln">
+              <p id="ln-required" class="error hidden">Last name is a required field</p>
+              <p id="ln-too-short" class="error hidden">Last name is too short</p>
+              <p id="ln-format" class="error hidden">Last name can't contain numbers</p>
+            </div>
+  
+            <div>
+              <label for="id">ID</label>          
+              <input type="number" placeholder="ID" name="id">
+              <p id="id-required" class="error hidden">ID number is a required field</p>
+              <p id="id-too-short" class="error hidden">ID number is too short</p>
+              <p id="id-format" class="error hidden">ID can contain only numbers</p>
+            </div>
+
+            <div>
+              <label for="d-birth">Date of birth</label>          
+              <input type="date" placeholder="Enter date" name="d-birth">
+              <p id="birth-required" class="error hidden">Date of birth is a required field</p>
+              <p id="future-date" class="error hidden">Invalid date</p>
+              <p id="over-18" class="error hidden">You must be +18</p>
+            </div>
+
+            <div>
+              <label for="phone">Phone number</label>          
+              <input type="number" placeholder="" name="phone">
+              <p id="phone-required" class="error hidden">Phone number is a required field</p>
+              <p id="phone-too-short" class="error hidden">Phone number is too short</p>
+              <p id="phone-format" class="error hidden">Phone can only contain numbers</p>
+            </div>
+
+            <div>
+              <label for="adress">Adress</label>          
+              <input type="text" placeholder="" name="adress">
+              <p id="adress-required" class="error hidden">Adress is a required field</p>
+              <p id="adress-too-short" class="error hidden">Adress is too short</p>
+              <p id="adress-format" class="error hidden">Adress must contain letters, numbers and a blankspace</p>
+            </div>
+
+            <div>
+              <label for="city-name">City</label>          
+              <input type="text" placeholder="" name="city-name">
+              <p id="city-required" class="error hidden">City name is a required field</p>
+              <p id="city-too-short" class="error hidden">City name is too short</p>
+            </div>
+
+            <div>
+              <label for="zip-code">ZIP code</label>          
+              <input type="text" placeholder="" name="zip-code">
+              <p id="zip-required" class="error hidden">ZIP code is a required field</p>
+              <p id="zip-size" class="error hidden">ZIP code must have 4 or 5 numbers</p>
+              <p id="zip-format" class="error hidden">ZIP code can contain only numbers</p>
+            </div>
+
+            <div>
+              <label for="email">Email</label>          
+              <input type="text" placeholder="Email" name="email" class="email-input">
+              <p id="eRequired" class="error hidden">Email is a required field</p>
+              <p id="eInvalid" class="error hidden">Invalid email format</p>
+            </div>
+  
+            <div>
+              <label for="psw">Password</label>          
+              <input type="password" placeholder="Password" name="psw">
+              <p class="error hidden">Password is required</p>
+              <p class="error hidden">Password must have at least 8 characters including numbers and letters</p>
+              <p class="error hidden">Password is too short</p>
+              <p class="error hidden">Password must contain numbers and letters</p>
+            </div>
+  
+            <div>
+              <label for="repeat-psw">Repeat password</label>          
+              <input type="password" placeholder="Repeat password" name="repeat-psw">
+              <p id="must-repeat" class="error hidden">You must repeat the password</p>
+              <p id="not-the-same" class="error hidden">The passwords are not the same</p>
+            </div>
+
+            <input type="button" value="Continue" class="button">
+          </form>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <div class="social-networks-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <p class="copy">Copyright &copy; 2022 Trackgenix. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
