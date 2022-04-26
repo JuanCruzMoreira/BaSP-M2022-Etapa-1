@@ -11,7 +11,7 @@ window.onload = function() {
   eInput.addEventListener('blur', function(){
     var eRegEx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
-    if (eInput.value == '') {
+    if (eInput.value === '') {
       eRequired.classList.remove('hidden');
       eMess = 'Email is required';
     } else if (!eRegEx.test(eInput.value)){
@@ -37,7 +37,7 @@ window.onload = function() {
   password.addEventListener('blur', function(){
     console.log(password.value);
 
-    if (password.value == '') {
+    if (password.value === '') {
       pswRequired.classList.remove('hidden');
       pswMess = 'Password is required';
     } else if (password.value !== correctPasw){
@@ -58,7 +58,7 @@ window.onload = function() {
   var button = document.querySelector(".button");
 
   button.onclick = function(){
-    alert('Mail:' + eMess + 'Password:' + pswMess);
+    alert('Mail:' + eMess + '\nPassword:' + pswMess);
     console.log(eMess);
   }
 
