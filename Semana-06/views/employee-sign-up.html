@@ -65,7 +65,7 @@
   
             <div>
               <label for="id">ID</label>          
-              <input type="text" placeholder="ID" name="id">
+              <input type="text" placeholder="00000000" name="id">
               <p id="id-required" class="error hidden">ID number is a required field</p>
               <p id="id-too-short" class="error hidden">ID number is too short</p>
               <p id="id-format" class="error hidden">ID can contain only numbers</p>
@@ -81,30 +81,30 @@
 
             <div>
               <label for="phone">Phone number</label>          
-              <input type="text" placeholder="" name="phone">
+              <input type="text" placeholder="0000000000" name="phone">
               <p id="phone-required" class="error hidden">Phone number is a required field</p>
               <p id="phone-too-short" class="error hidden">Phone number is too short</p>
               <p id="phone-format" class="error hidden">Phone can only contain numbers</p>
             </div>
 
             <div>
-              <label for="adress">Adress</label>          
-              <input type="text" placeholder="" name="adress">
-              <p id="adress-required" class="error hidden">Adress is a required field</p>
-              <p id="adress-too-short" class="error hidden">Adress is too short</p>
-              <p id="adress-format" class="error hidden">Adress must contain letters, numbers and a blankspace</p>
+              <label for="adress">Address</label>          
+              <input type="text" placeholder="Abcde 123" name="adress">
+              <p id="adress-required" class="error hidden">Address is a required field</p>
+              <p id="adress-too-short" class="error hidden">Address is too short</p>
+              <p id="adress-format" class="error hidden">Address must contain letters, numbers and a blankspace</p>
             </div>
 
             <div>
               <label for="city-name">City</label>          
-              <input type="text" placeholder="" name="city-name">
+              <input type="text" placeholder="City name" name="city-name">
               <p id="city-required" class="error hidden">City name is a required field</p>
               <p id="city-too-short" class="error hidden">City name is too short</p>
             </div>
 
             <div>
               <label for="zip-code">ZIP code</label>          
-              <input type="text" placeholder="" name="zip-code">
+              <input type="text" placeholder="0000" name="zip-code">
               <p id="zip-required" class="error hidden">ZIP code is a required field</p>
               <p id="zip-size" class="error hidden">ZIP code must have 4 or 5 numbers</p>
               <p id="zip-format" class="error hidden">ZIP code can contain only numbers</p>
@@ -133,7 +133,7 @@
               <p id="not-the-same" class="error hidden">The passwords are not the same</p>
             </div>
 
-            <input type="button" value="Continue" class="button">
+            <input type="submit" value="Continue" class="button">
           </form>
         </div>
       </main>

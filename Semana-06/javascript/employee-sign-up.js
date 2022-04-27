@@ -340,8 +340,10 @@ window.onload = function(){
 
   var button = document.querySelector(".button");
 
-  button.onclick = function(){
-    alert(alertMessage())
+  button.onclick = function(e){
+    e.preventDefault();
+
+    alert(alertMessage());
   }
 
   // AUX FUNCTIONS
