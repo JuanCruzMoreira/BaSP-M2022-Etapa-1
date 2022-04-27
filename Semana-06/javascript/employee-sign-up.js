@@ -441,7 +441,7 @@ function adressValidator (string){
     var isoFormattedStr = `${year}/${month}/${day}`;
     var date = new Date(isoFormattedStr);
     var currentDate = new Date(Date.now());
-
+    
     return currentDate >= date
   }
 
