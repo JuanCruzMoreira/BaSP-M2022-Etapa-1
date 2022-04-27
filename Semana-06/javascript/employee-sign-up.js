@@ -384,12 +384,14 @@ function validatePass(string) {
 }
 
 function onlyNumbers (string) {
+  var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
   for (i = 0; i < string.length; i++) {
-    if (!hasNumbers(string[i])) {
+    if (!numbers.includes(string[i])) {
       return false;
     }
-    return true;
   }
+  return true
 }
 
 function isEmpty (string){
