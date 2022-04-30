@@ -3,7 +3,7 @@ window.onload = function(){
 
   var inputs = document.getElementsByTagName('input');
   var messages = document.getElementsByTagName('p');
-  var alertValues = ['mess 1', 'mess 2', 'mess 3', 'mess 4'];
+  var alertValues = [];
   var labels = document.getElementsByTagName('label');
   var currentDate = new Date(Date.now());
 
@@ -12,11 +12,17 @@ window.onload = function(){
 // NAME
 
   inputs[1].addEventListener('blur', function(){
-    if (isEmpty(inputs[1].value)) {
+    validateName();
+  })
+
+  function validateName(){
+    var isValidated = false;
+
+    if (isEmpty(inputs[1].value.trim())) {
       messages[0].classList.remove('hidden');
       inputs[1].classList.add('red-border');
       alertValues[0] = (messages[0].textContent);
-    } else if (inputs[1].value.length < 3) {
+    } else if (inputs[1].value.trim().length < 3) {
         messages[1].classList.remove('hidden');
         inputs[1].classList.add('red-border');
         alertValues[0] = (messages[1].textContent);
@@ -25,11 +31,13 @@ window.onload = function(){
         inputs[1].classList.add('red-border');
         alertValues[0] = (messages[2].textContent);
     } else {
-        alertValues[0] = (inputs[1].value);
+        alertValues[0] = (inputs[1].value.trim());
         inputs[1].classList.add('green-border');
+        isValidated = true;
     }
-  })
-  
+    return isValidated;
+  }
+
   inputs[1].addEventListener('focus', function(){
     inputs[1].classList.remove('red-border');
     inputs[1].classList.remove('green-border');
@@ -41,11 +49,17 @@ window.onload = function(){
   // LAST NAME
   
   inputs[2].addEventListener('blur', function () {
-    if (isEmpty(inputs[2].value)) {
+    validateLastName();
+  })
+  
+  function validateLastName() {
+    var isValidated = false
+
+    if (isEmpty(inputs[2].value.trim())) {
       messages[3].classList.remove('hidden');
       inputs[2].classList.add('red-border');
       alertValues[1] = (messages[3].textContent);
-    } else if (inputs[2].value.length < 3) {
+    } else if (inputs[2].value.trim().length < 3) {
       messages[4].classList.remove('hidden');
       inputs[2].classList.add('red-border');
       alertValues[1] = (messages[4].textContent);
@@ -54,10 +68,12 @@ window.onload = function(){
       inputs[2].classList.add('red-border');
       alertValues[1] = (messages[5].textContent);
     } else {
-      alertValues[1] = (inputs[2].value);
+      alertValues[1] = (inputs[2].value.trim());
       inputs[2].classList.add('green-border');
+      isValidated = true;
     }
-  })
+    return isValidated;
+  }
   
   inputs[2].addEventListener('focus', function(){
     inputs[2].classList.remove('red-border');
@@ -70,12 +86,17 @@ window.onload = function(){
   // ID
   
   inputs[3].addEventListener('blur', function () {
+    validateID();
+  })
+  
+  function validateID() {
+    var isValidated = false;
     
-    if (isEmpty(inputs[3].value)) {
+    if (isEmpty(inputs[3].value.trim())) {
       messages[6].classList.remove('hidden');
       inputs[3].classList.add('red-border');
       alertValues[2] = (messages[6].textContent);
-    } else if (inputs[3].value.length < 8) {
+    } else if (inputs[3].value.trim().length < 8) {
       messages[7].classList.remove('hidden');
       inputs[3].classList.add('red-border');
       alertValues[2] = (messages[7].textContent);
@@ -84,10 +105,12 @@ window.onload = function(){
       inputs[3].classList.add('red-border');
       alertValues[2] = (messages[8].textContent);
     } else {
-      alertValues[2] = (inputs[3].value);
+      alertValues[2] = (inputs[3].value.trim());
       inputs[3].classList.add('green-border');
+      isValidated = true;
     }
-  })
+    return isValidated;
+  }
 
   inputs[3].addEventListener('focus', function(){
     inputs[3].classList.remove('red-border');
@@ -101,27 +124,31 @@ window.onload = function(){
   // BIRTH
   
   inputs[4].addEventListener('blur', function(){
-
-     validateDate(inputs[4].value)
-     formDate(inputs[4].value)
-
-    if (isEmpty(inputs[4].value)) {
-      messages[9].classList.remove('hidden');
-      inputs[4].classList.add('red-border');
-      alertValues[3] = (messages[9].textContent);
-    } else if (!validateDate(inputs[4].value)){
-      messages[10].classList.remove('hidden');
-      inputs[4].classList.add('red-border');
-      alertValues[3] = (messages[10].textContent);
-    } else if (!isAdult(inputs[4].value)) {
-      messages[11].classList.remove('hidden');
-      inputs[4].classList.add('red-border');
-      alertValues[3] = (messages[11].textContent);
-    } else {
-      alertValues[3] = (formDate(inputs[4].value));
-      inputs[4].classList.add('green-border');
-    }
+    validateBDate();
   })
+  
+  function validateBDate() {
+    var isValidated = false;
+  
+   if (isEmpty(inputs[4].value)) {
+     messages[9].classList.remove('hidden');
+     inputs[4].classList.add('red-border');
+     alertValues[3] = (messages[9].textContent);
+   } else if (!validateDate(inputs[4].value)){
+     messages[10].classList.remove('hidden');
+     inputs[4].classList.add('red-border');
+     alertValues[3] = (messages[10].textContent);
+   } else if (!isAdult(inputs[4].value)) {
+     messages[11].classList.remove('hidden');
+     inputs[4].classList.add('red-border');
+     alertValues[3] = (messages[11].textContent);
+   } else {
+     alertValues[3] = (formDate(inputs[4].value));
+     inputs[4].classList.add('green-border');
+     isValidated = true;
+   }
+    return isValidated;
+  }
 
   inputs[4].addEventListener('focus', function(){
     inputs[4].classList.remove('red-border');
@@ -134,12 +161,17 @@ window.onload = function(){
   // PHONE
 
   inputs[5].addEventListener('blur', function(){
+    validatePhone();
+  })
+  
+  function validatePhone() {
+    var isValidated = false;
     
-    if (isEmpty(inputs[5].value)) {
+    if (isEmpty(inputs[5].value.trim())) {
       messages[12].classList.remove('hidden');
       inputs[5].classList.add('red-border');
       alertValues[4] = (messages[12].textContent);
-    } else if (inputs[5].value.length < 10) {
+    } else if (inputs[5].value.trim().length < 10) {
       messages[13].classList.remove('hidden');
       inputs[5].classList.add('red-border');
       alertValues[4] = (messages[13].textContent);
@@ -148,10 +180,12 @@ window.onload = function(){
       inputs[5].classList.add('red-border');
       alertValues[4] = (messages[14].textContent);
     } else {
-      alertValues[4] = (inputs[5].value);
+      alertValues[4] = (inputs[5].value.trim());
       inputs[5].classList.add('green-border');
+      isValidated = true;
     }
-  })
+    return isValidated;
+  }
   
   inputs[5].addEventListener('focus', function(){
     inputs[5].classList.remove('red-border');
@@ -161,29 +195,35 @@ window.onload = function(){
     messages[14].classList.add('hidden');
   })
   
-  // ADRESS
+  // ADDRESS
   
   inputs[6].addEventListener('blur', function(){
+    validateAddress();
+  })
+  
+  function validateAddress() {
+    var isValidated = false;
     
-    adressValidator(inputs[6].value)
-    if (isEmpty(inputs[6].value)) {
+    if (isEmpty(inputs[6].value.trim())) {
       messages[15].classList.remove('hidden');
       inputs[6].classList.add('red-border');
       alertValues[5] = (messages[15].textContent);
-    } else if (inputs[6].value.length < 5) {
+    } else if (inputs[6].value.trim().length < 5) {
       messages[16].classList.remove('hidden');
       inputs[6].classList.add('red-border');
       alertValues[5] = (messages[16].textContent);
-    } else if (!adressValidator(inputs[6].value)) {
+    } else if (!adressValidator(inputs[6].value.trim())) {
       messages[17].classList.remove('hidden');
       inputs[6].classList.add('red-border');
       alertValues[5] = (messages[17].textContent);
     } else {
-      alertValues[5] = (inputs[6].value);
+      alertValues[5] = (inputs[6].value.trim());
       inputs[6].classList.add('green-border');
+      isValidated = true;
     }
-  })
-  
+    return isValidated;
+  }
+
   inputs[6].addEventListener('focus', function(){
     inputs[6].classList.remove('red-border');
     inputs[6].classList.remove('green-border');
@@ -195,20 +235,27 @@ window.onload = function(){
   // CITY
   
   inputs[7].addEventListener('blur', function(){
+    validateCity();
+  })
+  
+  function validateCity() {
+    var isValidated = false;
     
-    if (isEmpty(inputs[7].value)) {
+    if (isEmpty(inputs[7].value.trim())) {
       messages[18].classList.remove('hidden');
       inputs[7].classList.add('red-border');
       alertValues[6] = (messages[18].textContent);
-    } else if (inputs[7].value.length < 3) {
+    } else if (inputs[7].value.trim().length < 3) {
       messages[19].classList.remove('hidden');
       inputs[7].classList.add('red-border');
       alertValues[6] = (messages[19].textContent);
     } else {
-      alertValues[6] = (inputs[7].value);
+      alertValues[6] = (inputs[7].value.trim());
       inputs[7].classList.add('green-border');
+      isValidated = true;
     }
-  })
+    return isValidated;
+  }
   
   inputs[7].addEventListener('focus', function(){
     inputs[7].classList.remove('red-border');
@@ -221,12 +268,17 @@ window.onload = function(){
   // ZIP
 
   inputs[8].addEventListener('blur', function(){
+    validateZIP();
+  })
+  
+  function validateZIP() {
+    var isValidated = false;
     
-    if (isEmpty(inputs[8].value)) {
+    if (isEmpty(inputs[8].value.trim())) {
       messages[20].classList.remove('hidden');
       inputs[8].classList.add('red-border');
       alertValues[7] = (messages[20].textContent);
-    } else if (inputs[8].value.length < 4 || inputs[8].value.length > 5) {
+    } else if (inputs[8].value.trim().length < 4 || inputs[8].value.trim().length > 5) {
       messages[21].classList.remove('hidden');
       inputs[8].classList.add('red-border');
       alertValues[7] = (messages[21].textContent);
@@ -235,10 +287,12 @@ window.onload = function(){
       inputs[8].classList.add('red-border');
       alertValues[7] = (messages[22].textContent);
     } else {
-      alertValues[7] = (inputs[8].value);
+      alertValues[7] = (inputs[8].value.trim());
       inputs[8].classList.add('green-border');
+      isValidated = true;
     }
-  })
+    return isValidated;
+  }
   
   inputs[8].addEventListener('focus', function(){
     inputs[8].classList.remove('red-border');
@@ -252,10 +306,15 @@ window.onload = function(){
   // EMAIL
   
   inputs[9].addEventListener('blur', function(){
+    emailValidate();
+  })
+  
+  function emailValidate() {
+    var isValidated = false;
     
     var eRegEx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
-
-    if (isEmpty(inputs[9].value)) {
+  
+    if (isEmpty(inputs[9].value.trim())) {
       messages[23].classList.remove('hidden');
       inputs[9].classList.add('red-border');
       alertValues[8] = (messages[23].textContent);
@@ -264,11 +323,13 @@ window.onload = function(){
       inputs[9].classList.add('red-border');
       alertValues[8] = (messages[24].textContent);
     } else {
-      alertValues[8] = (inputs[9].value);
+      alertValues[8] = (inputs[9].value.trim());
       inputs[9].classList.add('green-border');
+      isValidated = true;
     }
-  })
-
+    return isValidated;
+  }
+  
   inputs[9].addEventListener('focus', function(){
     inputs[9].classList.remove('red-border');
     inputs[9].classList.remove('green-border');
@@ -279,16 +340,21 @@ window.onload = function(){
   //PASSWORD
   
   inputs[10].addEventListener('blur', function(){
+    validatePassword();
+  })
+  
+  function validatePassword() {
+    var isValidated = false;
     
-    if (isEmpty(inputs[10].value)) {
+    if (isEmpty(inputs[10].value.trim())) {
       alertValues[9] = (messages[25].textContent);
       messages[25].classList.remove('hidden');
       inputs[10].classList.add('red-border');
-    } else if (inputs[10].value.length < 8 && !validatePass(inputs[10].value)) {
+    } else if (inputs[10].value.trim().length < 8 && !validatePass(inputs[10].value)) {
       alertValues[9] = (messages[26].textContent);
       messages[26].classList.remove('hidden');
       inputs[10].classList.add('red-border');
-    } else if (inputs[10].value.length < 8) {
+    } else if (inputs[10].value.trim().length < 8) {
       alertValues[9] = (messages[27].textContent);
       messages[27].classList.remove('hidden');
       inputs[10].classList.add('red-border');
@@ -297,10 +363,12 @@ window.onload = function(){
       messages[28].classList.remove('hidden');
       inputs[10].classList.add('red-border');
     } else {
-      alertValues[9] = (inputs[10].value);
+      alertValues[9] = (inputs[10].value.trim());
       inputs[10].classList.add('green-border');
+      isValidated = true;
     }
-  })
+    return isValidated;
+  }
   
   inputs[10].addEventListener('focus', function(){
     inputs[10].classList.remove('red-border');
@@ -314,8 +382,13 @@ window.onload = function(){
   //REPEAT PASSWORD
   
   inputs[11].addEventListener('blur', function(){
+    validateRepeatPsw();
+  })
+  
+  function validateRepeatPsw() {
+    var isValidated = false;
     
-    if (isEmpty(inputs[11].value)) {
+    if (isEmpty(inputs[11].value.trim())) {
       alertValues[10] = (messages[29].textContent);
       messages[29].classList.remove('hidden');
       inputs[11].classList.add('red-border');
@@ -324,10 +397,12 @@ window.onload = function(){
       messages[30].classList.remove('hidden');
       inputs[11].classList.add('red-border');
     } else {
-      alertValues[10] = (inputs[11].value);
+      alertValues[10] = (inputs[11].value.trim());
       inputs[11].classList.add('green-border');
+      isValidated = true;
     }
-  })
+    return isValidated;
+  }
   
   inputs[11].addEventListener('focus', function(){
     inputs[11].classList.remove('red-border');
@@ -339,17 +414,49 @@ window.onload = function(){
   // BUTTON
 
   var button = document.querySelector(".button");
-
+  
   button.onclick = function(e){
     e.preventDefault();
+    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup'
 
-    alert(alertMessage());
+    console.log(queryParams(inputs))
+
+    if(validateName() && validateLastName() && validateID() && validateBDate() && validatePhone() && validateAddress() && 
+      validateCity() && validateZIP() && emailValidate() && validatePassword() && validateRepeatPsw()) {
+
+        console.log('Pasó todas las validaciones');
+
+        fetch(url.concat('?', queryParams(inputs)))
+        .then(function(response){
+          console.log('Entró primer then');
+          return response.json();
+        })
+        .then(function(data){
+          console.log('Entró segundo then');
+          console.log(data);
+        })
+        .catch(function(error){
+          console.log('Entró al catch');
+          console.log(error)
+        })
+      }
+    
+      console.log('No pasó validaciones');
+
+    // alert(alertMessage());
+  }
+  
+  // AUX FUNCTIONS
+  
+  function isEmpty (string){
+    if (string === '') {
+      return true;
+    }
+    return false;
   }
 
-  // AUX FUNCTIONS
-
-function hasNumbers (string) {
-  var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  function hasNumbers (string) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
   for (i = 0; i < string.length; i++) {
     if (numbers.includes(string[i])) {
@@ -358,71 +465,64 @@ function hasNumbers (string) {
   }
   return false
 }
-function validatePass(string) {
-  var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  var alph = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
-      'r', 's', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-  var minValue = string.toLowerCase();
-  var num = 0;
-  var char = 0;
-  var special = false;
-  for (i = 0; i < string.length; i++) {
-      if (numbers.includes(string[i])) {
-          num++;
-      } else if (alph.includes(minValue[i])) {
-          char++;
-      } else {
-          special = true;
+  function onlyNumbers (string) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    
+    for (i = 0; i < string.length; i++) {
+      if (!numbers.includes(string[i])) {
+        return false;
       }
+    }
+    return true
   }
-  if (num >= 1 && char >= 1 && special == false) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
-function onlyNumbers (string) {
-  var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  function validatePass(string) {
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var alph = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
+        'r', 's', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-  for (i = 0; i < string.length; i++) {
-    if (!numbers.includes(string[i])) {
+    var minValue = string.toLowerCase();
+    var num = 0;
+    var char = 0;
+    var special = false;
+    for (i = 0; i < string.length; i++) {
+        if (numbers.includes(string[i])) {
+            num++;
+        } else if (alph.includes(minValue[i])) {
+            char++;
+        } else {
+            special = true;
+        }
+    }
+    if (num >= 1 && char >= 1 && special == false) {
+      return true;
+    } else {
       return false;
     }
   }
-  return true
-}
 
-function isEmpty (string){
-  if (string === '') {
-    return true;
+
+  function adressValidator (string){
+
+    var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var alph = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
+        'r', 's', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+    spacePos = string.indexOf(' ');
+    hasSpace = false;
+
+    if (spacePos >= 0) {
+      hasSpace = true;
+      adressChar = string.substring(0, spacePos);
+      adressNum = string.substring(spacePos, string.length); 
+    }
+
+    return hasSpace && !hasNumbers(adressChar) && hasNumbers(adressNum);
   }
-  return false;
-}
-
-function adressValidator (string){
-
-  var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  var alph = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
-      'r', 's', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-  spacePos = string.indexOf(' ');
-  hasSpace = false;
-
-  if (spacePos >= 0) {
-    hasSpace = true;
-    adressChar = string.substring(0, spacePos);
-    adressNum = string.substring(spacePos, string.length); 
-    console.log(adressChar);
-    console.log(adressNum);
-  }
-
-  return hasSpace && !hasNumbers(adressChar) && hasNumbers(adressNum);
-}
 
   function isAdult (date){
-    
+      
     var date = new Date(date);
     var currentDate = new Date(Date.now());
 
@@ -431,7 +531,7 @@ function adressValidator (string){
 
   function formDate(dateToForm) {
 
-    var [year, month, day] = dateToForm.split("-");
+    var [year, month, day] = dateToForm.split('-');
     var formattedDate = `${day}/${month}/${year}`;
     
     return  formattedDate;
@@ -447,6 +547,14 @@ function adressValidator (string){
     return currentDate >= date
   }
 
+  function toMonthDayYear(dateToConv){
+
+    [year, month, day] = dateToConv.split('-');
+    var dateMDY = [month, day, year].join('/')
+
+    return dateMDY
+  }
+
   function alertMessage () {
     var messArray = [];
 
@@ -455,5 +563,18 @@ function adressValidator (string){
     } 
 
       return messArray.join('\n');
+  }
+
+  function queryParams(array) {
+    var queryP = [];
+
+    for (i = 1; i < array.length-1; i++) {
+      if(i == 4){
+        queryP.push(array[i].name.concat('=', toMonthDayYear(array[i].value)));
+      } else {
+        queryP.push(array[i].name.concat('=', array[i].value.trim()));
+      }
+    }
+    return queryP.join('&');
   }
 }
