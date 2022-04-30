@@ -8,8 +8,9 @@ window.onload = function() {
   var eRequired = document.getElementById("email-required");
   var eInvalid = document.getElementById("invalid-email");
   
-  eInput.addEventListener('blur', function(){
+  function validateEmail() {
     var eRegEx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+    var eValidated = false;
 
     if (eInput.value === '') {
       eRequired.classList.remove('hidden');
@@ -22,7 +23,13 @@ window.onload = function() {
     } else {
       eInput.classList.add('green-border');
       eMess = eInput.value;
+      eValidated = true;
     }
+    return eValidated;
+  }
+
+  eInput.addEventListener('blur', function(){
+    validateEmail();
   })
   
   eInput.addEventListener('focus', function(){
@@ -34,25 +41,27 @@ window.onload = function() {
   
   // PASSWORD VALIDATION
   
-  const correctPasw = 'MyPassword01';
   var password = document.querySelector(".psw");
   var pswRequired = document.getElementById("psw-required");
   var pswInc = document.getElementById("psw-inc");
   
-  password.addEventListener('blur', function(){
+  function validatePsw() {
+    var pswValidated = false;
 
     if (password.value === '') {
       pswRequired.classList.remove('hidden');
       password.classList.add('red-border');
       pswMess = 'Password is required';
-    } else if (password.value !== correctPasw){
-      pswInc.classList.remove('hidden');
-      password.classList.add('red-border');
-      pswMess = 'Wrong password';
     } else {
       pswMess = password.value;
       password.classList.add('green-border');
+      pswValidated = true;
     }
+    return pswValidated;
+  }
+
+  password.addEventListener('blur', function(){
+    validatePsw();
   })
 
   password.addEventListener('focus', function(){
@@ -68,6 +77,22 @@ window.onload = function() {
 
   button.onclick = function(){
     alert('Mail: ' + eMess + '\nPassword: ' + pswMess);
-  }
 
+    if (validateEmail() && validatePsw()) {
+      var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
+
+      fetch(url.concat('?email=', eInput.value, '&password=', password.value))
+        .then(function(response){
+          return response.json();
+        })
+      
+        .then(function(data){
+          console.log(data);
+        })
+
+        .catch(function(error){
+          console.log(error);
+        })
+    }
+  }
 }
