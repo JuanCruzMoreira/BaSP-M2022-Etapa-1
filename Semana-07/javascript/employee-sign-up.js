@@ -112,7 +112,7 @@ if (localStorage.getItem('id') != null){
       messages[6].classList.remove('hidden');
       inputs[3].classList.add('red-border');
       alertValues[2] = (messages[6].textContent);
-    } else if (inputs[3].value.trim().length < 8) {
+    } else if (inputs[3].value.trim().length < 7 || inputs[3].value.trim().length > 8) {
       messages[7].classList.remove('hidden');
       inputs[3].classList.add('red-border');
       alertValues[2] = (messages[7].textContent);
