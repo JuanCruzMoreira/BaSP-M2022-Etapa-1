@@ -7,6 +7,22 @@ window.onload = function(){
   var labels = document.getElementsByTagName('label');
   var currentDate = new Date(Date.now());
 
+//FILL IN INPUTS
+
+if (localStorage.getItem('id') != null){
+  inputs[1].value = localStorage.getItem('name');
+  inputs[2].value = localStorage.getItem('lastName');
+  inputs[3].value = localStorage.getItem('dni');
+  inputs[4].value = toYearMonthDay(localStorage.getItem('dob'));
+  inputs[5].value = localStorage.getItem('phone');
+  inputs[6].value = localStorage.getItem('address');
+  inputs[7].value = localStorage.getItem('city');
+  inputs[8].value = localStorage.getItem('zip');
+  inputs[9].value = localStorage.getItem('email');
+  inputs[10].value = localStorage.getItem('password');
+  inputs[11].value = localStorage.getItem('password');
+}
+
 // VALIDATIONS
 
 // NAME
@@ -171,7 +187,7 @@ window.onload = function(){
       messages[12].classList.remove('hidden');
       inputs[5].classList.add('red-border');
       alertValues[4] = (messages[12].textContent);
-    } else if (inputs[5].value.trim().length < 10) {
+    } else if (inputs[5].value.trim().length !== 10) {
       messages[13].classList.remove('hidden');
       inputs[5].classList.add('red-border');
       alertValues[4] = (messages[13].textContent);
@@ -417,33 +433,40 @@ window.onload = function(){
   
   button.onclick = function(e){
     e.preventDefault();
-    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup'
 
-    console.log(queryParams(inputs))
+    if(validateName() && validateLastName() && validateID() && validateBDate() && validatePhone() && validateAddress() && validateCity() && validateZIP() && emailValidate() 
+    && validatePassword() && validateRepeatPsw()) {
+      
+      console.log('Pasó todas las validaciones');
+      var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup'
 
-    if(validateName() && validateLastName() && validateID() && validateBDate() && validatePhone() && validateAddress() && 
-      validateCity() && validateZIP() && emailValidate() && validatePassword() && validateRepeatPsw()) {
+      fetch(concatQueryParams(inputs, url))
+      .then(function(response){
+        return response.json();
+      })
 
-        console.log('Pasó todas las validaciones');
-
-        fetch(url.concat('?', queryParams(inputs)))
-        .then(function(response){
-          console.log('Entró primer then');
-          return response.json();
-        })
-        .then(function(data){
-          console.log('Entró segundo then');
-          console.log(data);
-        })
-        .catch(function(error){
-          console.log('Entró al catch');
-          console.log(error)
-        })
-      }
-    
-      console.log('No pasó validaciones');
-
-    // alert(alertMessage());
+      .then(function(jsonResponse){
+        if(jsonResponse.success){
+          console.log('jsonResponse success');
+          localStorage.setItem('id', jsonResponse.data.id);
+          localStorage.setItem('name', jsonResponse.data.name);
+          localStorage.setItem('lastName', jsonResponse.data.lastName);
+          localStorage.setItem('dni', jsonResponse.data.dni);
+          localStorage.setItem('dob', jsonResponse.data.dob);
+          localStorage.setItem('phone', jsonResponse.data.phone);
+          localStorage.setItem('address', jsonResponse.data.address);
+          localStorage.setItem('city', jsonResponse.data.city);
+          localStorage.setItem('zip', jsonResponse.data.zip);
+          localStorage.setItem('email', jsonResponse.data.email);
+          localStorage.setItem('password', jsonResponse.data.password);
+          console.log('user stores in localStorage');
+        }
+      })
+      .catch(function(error){
+        console.log('Entró al catch');
+        console.log(error)
+      })
+    } else { console.log('No pasó validaciones');}
   }
   
   // AUX FUNCTIONS
@@ -554,6 +577,14 @@ window.onload = function(){
 
     return dateMDY
   }
+  
+  function toYearMonthDay(dateToConv){
+
+    [month, day, year] = dateToConv.split('/');
+    var dateYMD = [year, month, day].join('-')
+
+    return dateYMD
+  }
 
   function alertMessage () {
     var messArray = [];
@@ -565,7 +596,7 @@ window.onload = function(){
       return messArray.join('\n');
   }
 
-  function queryParams(array) {
+  function concatQueryParams(array, path) {
     var queryP = [];
 
     for (i = 1; i < array.length-1; i++) {
@@ -575,6 +606,6 @@ window.onload = function(){
         queryP.push(array[i].name.concat('=', array[i].value.trim()));
       }
     }
-    return queryP.join('&');
+    return path.concat('?', queryP.join('&'));
   }
 }

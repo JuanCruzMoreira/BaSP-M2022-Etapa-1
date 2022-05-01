@@ -76,6 +76,7 @@ window.onload = function() {
   var button = document.querySelector(".button");
 
   button.onclick = function(){
+
     alert('Mail: ' + eMess + '\nPassword: ' + pswMess);
 
     if (validateEmail() && validatePsw()) {
@@ -83,13 +84,12 @@ window.onload = function() {
 
       fetch(url.concat('?email=', eInput.value, '&password=', password.value))
         .then(function(response){
-          return response.json();
+          if (response.ok) {
+            alert('Employee logged');
+          } else {
+            alert('Wrong email or password');
+          }
         })
-      
-        .then(function(data){
-          console.log(data);
-        })
-
         .catch(function(error){
           console.log(error);
         })
