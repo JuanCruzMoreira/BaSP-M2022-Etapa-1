@@ -50,3 +50,10 @@ Exercise results: https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana-05/inde
 ## Week 06
 
 This week we worked in Trackgenix web app. Added login and employee-sign-up screens and made it responsive. Using javascript under ES5 specification we add validations for the inputs. Page can be seen in https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
+
+## Week 07
+
+This week we learn about callbacks, promises and asynchronism in js. Using fetch we add few more validations, but now on server side.
+Moreover, we stored user data in the local storage and use that information to autofill all the inputs.
+
+https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana7/views/index.html
