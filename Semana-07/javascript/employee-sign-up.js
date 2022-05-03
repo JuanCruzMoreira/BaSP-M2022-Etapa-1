@@ -447,7 +447,9 @@ if (localStorage.getItem('id') != null){
 
       .then(function(jsonResponse){
         if(jsonResponse.success){
-          console.log('jsonResponse success');
+          alert(jsonResponse.msg);
+          alert(alertMessage());
+
           localStorage.setItem('id', jsonResponse.data.id);
           localStorage.setItem('name', jsonResponse.data.name);
           localStorage.setItem('lastName', jsonResponse.data.lastName);
@@ -459,14 +461,16 @@ if (localStorage.getItem('id') != null){
           localStorage.setItem('zip', jsonResponse.data.zip);
           localStorage.setItem('email', jsonResponse.data.email);
           localStorage.setItem('password', jsonResponse.data.password);
-          console.log('user stores in localStorage');
+        } else{
+          alert(responseErrors(jsonResponse.errors))
         }
       })
       .catch(function(error){
-        console.log('Entró al catch');
-        console.log(error)
+        alert('ERROR: ' + error)
       })
-    } else { console.log('No pasó validaciones');}
+    } else { 
+      alert(alertMessage());
+    }
   }
   
   // AUX FUNCTIONS
@@ -608,4 +612,12 @@ if (localStorage.getItem('id') != null){
     }
     return path.concat('?', queryP.join('&'));
   }
+}
+
+function responseErrors(array) {
+  errors = [];
+  for (i = 0; i < array.length; i++) {
+    errors.push(array[i].msg);
+  }
+  return errors.join('\n');
 }
