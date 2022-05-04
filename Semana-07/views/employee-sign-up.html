@@ -44,6 +44,7 @@
         </div>
       </aside>
       <main>
+        
         <div class="form-container">
           <h2>Sign Up</h2>
           <form id="sign-up">
@@ -52,7 +53,7 @@
               <input type="text" placeholder="Name" name="name">
               <p id="n-required" class="error hidden">Name is a required field</p>
               <p id="n-too-short" class="error hidden">Name is too short</p>
-              <p id="n-format" class="error hidden">Name can't contain numbers</p>
+              <p id="n-format" class="error hidden">Name must contain only letters</p>
             </div>
   
             <div>
@@ -60,12 +61,12 @@
               <input type="text" placeholder="Last Name" name="lastName">
               <p id="ln-required" class="error hidden">Last name is a required field</p>
               <p id="ln-too-short" class="error hidden">Last name is too short</p>
-              <p id="ln-format" class="error hidden">Last name can't contain numbers</p>
+              <p id="ln-format" class="error hidden">Last name must contain only letters</p>
             </div>
   
             <div>
               <label for="id">ID</label>          
-              <input type="text" placeholder="00000000" name="dni">
+              <input type="number" placeholder="00000000" name="dni">
               <p id="id-required" class="error hidden">ID is a required field</p>
               <p id="id-too-short" class="error hidden">ID must have between 7 and 8 numbers</p>
               <p id="id-format" class="error hidden">ID can contain only numbers</p>
@@ -81,7 +82,7 @@
 
             <div>
               <label for="phone">Phone number</label>          
-              <input type="text" placeholder="0000000000" name="phone">
+              <input type="number" placeholder="0000000000" name="phone">
               <p id="phone-required" class="error hidden">Phone number is a required field</p>
               <p id="phone-too-short" class="error hidden">Phone must have 10 numbers</p>
               <p id="phone-format" class="error hidden">Phone can only contain numbers</p>
@@ -104,7 +105,7 @@
 
             <div>
               <label for="zip-code">ZIP code</label>          
-              <input type="text" placeholder="0000" name="zip">
+              <input type="number" placeholder="0000" name="zip">
               <p id="zip-required" class="error hidden">ZIP code is a required field</p>
               <p id="zip-size" class="error hidden">ZIP code must have 4 or 5 numbers</p>
               <p id="zip-format" class="error hidden">ZIP code can contain only numbers</p>

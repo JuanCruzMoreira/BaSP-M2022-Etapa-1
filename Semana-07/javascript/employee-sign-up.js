@@ -42,7 +42,7 @@ if (localStorage.getItem('id') != null){
         messages[1].classList.remove('hidden');
         inputs[1].classList.add('red-border');
         alertValues[0] = (messages[1].textContent);
-    } else if (hasNumbers(inputs[1].value)) {
+    } else if (!onlyLetters(inputs[1].value)) {
         messages[2].classList.remove('hidden');
         inputs[1].classList.add('red-border');
         alertValues[0] = (messages[2].textContent);
@@ -79,7 +79,7 @@ if (localStorage.getItem('id') != null){
       messages[4].classList.remove('hidden');
       inputs[2].classList.add('red-border');
       alertValues[1] = (messages[4].textContent);
-    } else if (hasNumbers(inputs[2].value)) {
+    } else if (!onlyLetters(inputs[2].value)) {
       messages[5].classList.remove('hidden');
       inputs[2].classList.add('red-border');
       alertValues[1] = (messages[5].textContent);
@@ -427,6 +427,7 @@ if (localStorage.getItem('id') != null){
     messages[30].classList.add('hidden');
   })
   
+
   // BUTTON
 
   var button = document.querySelector(".button");
@@ -504,6 +505,20 @@ if (localStorage.getItem('id') != null){
     return true
   }
 
+  function onlyLetters (string) {
+    var alpha = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
+    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '];
+
+    var minValue = string.toLowerCase();
+
+    for (i = 0; i < string.length; i++) {
+      if (!alpha.includes(minValue[i])) {
+        return false;
+      }
+    }
+      return true
+  }
+
   function validatePass(string) {
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var alph = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
@@ -529,12 +544,11 @@ if (localStorage.getItem('id') != null){
     }
   }
 
-
   function adressValidator (string){
 
     var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var alph = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
-        'r', 's', 'u', 'v', 'w', 'x', 'y', 'z'];
+        'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
     spacePos = string.indexOf(' ');
     hasSpace = false;
@@ -612,12 +626,12 @@ if (localStorage.getItem('id') != null){
     }
     return path.concat('?', queryP.join('&'));
   }
-}
-
-function responseErrors(array) {
-  errors = [];
-  for (i = 0; i < array.length; i++) {
-    errors.push(array[i].msg);
+  
+  function responseErrors(array) {
+    errors = [];
+    for (i = 0; i < array.length; i++) {
+      errors.push(array[i].msg);
+    }
+    return errors.join('\n');
   }
-  return errors.join('\n');
-}
+} 
