@@ -56,4 +56,4 @@ This week we worked in Trackgenix web app. Added login and employee-sign-up scre
 This week we learn about callbacks, promises and asynchronism in js. Using fetch we add few more validations, but now on server side.
 Moreover, we stored user data in the local storage and use that information to autofill all the inputs.
 
-https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana7/views/index.html
+https://juanmornik.github.io/BaSP-M2022-Etapa-1/Semana07/views/index.html
